@@ -27,7 +27,6 @@
 13. Limpe o terminal.
 
 Para os exercícios 14 e 15, crie, de forma manual na parte gráfica do seu sistema operacional (através do mouse), um arquivo de texto com o conteúdo abaixo, chamado skills.txt :
-... 
 Internet
 Unix
 Bash
@@ -36,7 +35,6 @@ CSS
 JavaScript
 React
 SQL
-...
 
 14. Mostre na tela as 5 primeiras skills do arquivo skills.txt .
 
@@ -48,9 +46,7 @@ SQL
 # Parte II - Manipulação & Busca
 
 1. Na pasta unix_tests , baixe um arquivo com os nomes de todos os países do mundo utilizando o comando curl:
-...
 curl -o countries.txt "https://gist.githubusercontent.com/kalinchernev/486393efcca01623b18d/raw/daa24c9fea66afb7d68f8d69f0c4b8eeb9406e83/countries"
-...
 
 2. Mostre todo o conteúdo do arquivo countries.txt na tela.
 

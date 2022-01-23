@@ -49,14 +49,10 @@
 5. Crie um processo em background que rode o comando sleep por 300 segundos.
 
 6. Crie mais dois processos que rodem o comando sleep por 200 e 100 segundos, respectivamente.
-...
 Você deve criá-los em foreground (sem usar o & ) e suspendê-los (apertando ctrl+z ) após cada um começar a executar.
-...
 
 7. Verifique que apenas o processo sleep 300 está em execução com o comando jobs . Suspenda a execução desse processo.
-...
 Você vai precisar trazer o processo para foreground ( fg ) e suspendê-lo ( ctrl+z ), ou enviar um sinal.
-...
 
 8. Retome a execução do processo sleep 100 em background com o comando bg .
 
@@ -65,12 +61,10 @@ Você vai precisar trazer o processo para foreground ( fg ) e suspendê-lo ( ctr
 
 # (Bônus) - Parte IV - O despertar do terminal
 
-...
 Se você utiliza macOS , precisa ter o gerenciador de pacotes brew instalado, para isso, siga as orientações neste link .
 Após instalar o brew , instale o factor e o telnet :
 Para instalar o factor, execute no terminal: brew install coreutils ;
 Para instalar o telnet, execute no terminal: brew install telnet .
-...
 
 1. Se você utiliza o Linux , abra o terminal e execute o comando sudo apt-get install cmatrix , ou para pessoas usuárias de macOS , utilize no terminal brew install cmatrix . Depois, execute o comando cmatrix . Quando estiver se sentindo como o Neo , aperte ctrl+c para voltar ao terminal;
 
