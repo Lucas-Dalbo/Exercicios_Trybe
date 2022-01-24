@@ -8,4 +8,4 @@ git checkout nome
 git push -u origin nome.da.branch
 
 - Deletar branch:
-- git branch -d nome.da.branch
+git branch -d nome.da.branch
