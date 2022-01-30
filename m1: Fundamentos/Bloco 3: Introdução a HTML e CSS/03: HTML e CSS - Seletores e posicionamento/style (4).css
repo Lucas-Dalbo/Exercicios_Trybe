@@ -4,12 +4,13 @@ div:hover {
 div:nth-child(4) h3 {
   background-color: blue;
   font-size: 35px;
-  font-style: italic;
+  text-transform: uppercase;
 }
 div:nth-child(5) h3 { 
   background-color: red;
-  font-size: 35px;
+  font-size: 50px;
   text-shadow: 2px 2px white;
+  padding: 10px;
 }
 div:nth-child(6) h3{
   background-color: purple;
@@ -25,4 +26,7 @@ div:nth-child(3) {
   background-color: green;
   font-size: 35px;
   font-family: monospace;
+}
+div:nth-child(2n+1) {
+  font-style: italic;
 }
