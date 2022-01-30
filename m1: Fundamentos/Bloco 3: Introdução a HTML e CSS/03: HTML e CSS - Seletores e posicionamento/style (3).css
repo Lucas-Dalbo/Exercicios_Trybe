@@ -1,0 +1,13 @@
+h1, p {
+  text-align: center; 
+}
+li:hover {
+  background-color: darksalmon;
+}
+li:active {
+  font-family: monospace;
+  font-size: xx-large;
+}
+ol, ul { 
+  list-style: none;
+}
