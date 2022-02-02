@@ -1,6 +1,6 @@
-const a = 6;
-const b = 3;
-const c = 1;
+const a;
+const b;
+const c;
 
 if ( a > b ) {
     var d = a;
