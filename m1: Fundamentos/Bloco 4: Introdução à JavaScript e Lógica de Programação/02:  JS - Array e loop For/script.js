@@ -56,15 +56,23 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 //  }
 
 // Exercício 7
-let menor = 0;
+// let menor = 0;
 
-for ( let i = 0; i < numbers.length; i+=1) {
-    if ( menor === 0) {
-        menor = numbers[i];
-        }
-    else if ( menor > numbers[i]) {
-        menor = numbers[i]
-    }
+// for ( let i = 0; i < numbers.length; i+=1) {
+//     if ( menor === 0) {
+//         menor = numbers[i];
+//         }
+//     else if ( menor > numbers[i]) {
+//         menor = numbers[i]
+//     }
+// }
+
+// console.log(menor);
+
+// Exercício 8
+let myArray = []
+
+for ( i = 1; i <= 25; i+=1) {
+    myArray.push(i);
 }
-
-console.log(menor);
+ console.log(myArray);
