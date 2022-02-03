@@ -69,10 +69,14 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
 // console.log(menor);
 
-// Exercício 8
-let myArray = []
+// Exercício 8 e 9
+// let myArray = []
 
-for ( i = 1; i <= 25; i+=1) {
-    myArray.push(i);
-}
- console.log(myArray);
+// for ( i = 1; i <= 25; i+=1) {
+//     myArray.push(i);
+// }
+//  console.log(myArray);
+
+//  for ( let n of myArray) {
+//      console.log(n / 2);
+//  }
