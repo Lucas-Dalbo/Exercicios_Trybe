@@ -1,5 +1,5 @@
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
- 
+
 // Exercício 1
 // for ( let element of numbers ) {
 //     console.log(element);
@@ -41,16 +41,30 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 // console.log(maior);
 
 // Exercício 6
-let impar = 0;
+// let impar = 0;
+
+// for ( let i = 0; i < numbers.length; i+=1) {
+//     if  (numbers[i] % 2 === 1) {
+//         impar+=1 ;
+//         }
+// }
+//  if ( impar != 0) {
+//      console.log(impar);
+//  }
+//  else {
+//      console.log("Nenhum valor impar encontrado");
+//  }
+
+// Exercício 7
+let menor = 0;
 
 for ( let i = 0; i < numbers.length; i+=1) {
-    if  (numbers[i] % 2 === 1) {
-        impar+=1 ;
+    if ( menor === 0) {
+        menor = numbers[i];
         }
+    else if ( menor > numbers[i]) {
+        menor = numbers[i]
+    }
 }
- if ( impar != 0) {
-     console.log(impar);
- }
- else {
-     console.log("Nenhum valor impar encontrado");
- }
+
+console.log(menor);
