@@ -8,5 +8,3 @@ function palindromo (word) {
     
 }
 console.log(palindromo("arara"));
-
-
