@@ -22,4 +22,4 @@ leitor.livrosFavoritos.push( {
   } );
 
 // Exercício 8:
-console.log ("A " + leitor.nome + " " + leitor.sobrenome + " tem 2 livros favoritos, '" + leitor.livrosFavoritos[0].titulo + "' e '" + leitor.livrosFavoritos[1].titulo + "'.");
+console.log ("A " + leitor.nome + " " + leitor.sobrenome + " tem " + leitor.livrosFavoritos.length +  " livros favoritos, '" + leitor.livrosFavoritos[0].titulo + "' e '" + leitor.livrosFavoritos[1].titulo + "'.");
