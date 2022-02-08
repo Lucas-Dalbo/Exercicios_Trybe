@@ -30,7 +30,7 @@ let info2 = {
 };
 
 for ( let key in info) {
-    if ( info[key] === info2[key] ) {
+    if ( key === "recorrente" && info[key] === info2[key] ) {
         console.log("Ambos recorrentes");
     }
     else {
