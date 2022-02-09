@@ -19,7 +19,7 @@ function maisRepete (objeto) {
             valor = objeto[key]
             chave = key;
         }
-        else if ( valor < objeto.key) {
+        else if ( valor < objeto[key]) {
             valor = objeto[key];
             chave = key;
         }
@@ -27,5 +27,5 @@ function maisRepete (objeto) {
     return chave;
 };
 
-let teste = [2, 3, 2, 5, 8, 2, 3]; 
+let teste = [2, 3, 2, 5, 8, 3, 3]; 
 console.log(contagem(teste));
