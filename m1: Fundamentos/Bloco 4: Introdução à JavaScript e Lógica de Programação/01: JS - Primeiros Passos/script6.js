@@ -1,5 +1,5 @@
 let chessPice = "";
-let result = chessPice.toLocaleLowerCase();
+let result = chessPiece.toLocaleLowerCase();
 
 switch (result) {
     case  "peão":
