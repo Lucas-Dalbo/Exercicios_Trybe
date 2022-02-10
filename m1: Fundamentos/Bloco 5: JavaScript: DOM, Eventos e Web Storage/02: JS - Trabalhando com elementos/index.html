@@ -55,7 +55,9 @@
       }
     </style>
   </head>
+  
   <body>
+      <img src="" alt="">
     <script>
       // COLOQUE SEU CÓDIGO AQUI
       // 1. Criando a variavel 'titulo' com o valor 'h1', depois atribuindo texto com 'inerText' e por fim doando ela pro 'body'.
@@ -94,6 +96,45 @@
 
       main.appendChild(section3);
 
+      // 7. Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
+      let img = document.createElement("img");
+      img.className = "small-image ";
+      img.src = "https://picsum.photos/200";
+
+      section2.appendChild(img);
+
+      // 8. Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+      let listaTipo = document.createElement("ul")
+      section3.appendChild(listaTipo);
+
+      function liMaker (texto) {
+          let elememto = document.createElement("li");
+          elememto.innerText = texto;
+
+          listaTipo.appendChild(elememto);
+      }
+
+      liMaker("Um");
+      liMaker("Dois");
+      liMaker("Quatro");
+      liMaker("Cinco");
+      liMaker("Seis");
+      liMaker("Sete");
+      liMaker("Oito");
+      liMaker("Nove");
+      liMaker("Dez");
+
+      // 9. Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+      function h3Maker (texto) {
+          let h3 = document.createElement("h3");
+          h3.innerText = texto;
+
+          main.appendChild(h3);
+      }
+
+      h3Maker("a");
+      h3Maker("b");
+      h3Maker("c");
 
     </script>
   </body>
