@@ -59,7 +59,7 @@
   <body>
       <img src="" alt="">
     <script>
-      // COLOQUE SEU CÓDIGO AQUI
+      // PARTE 1 - CRIAÇÃO
       // 1. Criando a variavel 'titulo' com o valor 'h1', depois atribuindo texto com 'inerText' e por fim doando ela pro 'body'.
       let titulo = document.createElement("h1");
       titulo.innerText = "Exercício 5.2 - JavaScript DOM";
@@ -136,6 +136,15 @@
       h3Maker("b");
       h3Maker("c");
 
+      // PARTE 2 - REMOVENDO E ALTERANDO
+      // 1. Adicione a classe title na tag h1 criada;
+      titulo.className = "title";
+
+      // 2 . Adicione a classe description nas 3 tags h3 criadas;
+      for ( let i in document.querySelectorAll("h3")) {
+        document.querySelectorAll("h3")[i].className = "description";
+      }
+      
     </script>
   </body>
 </html>
