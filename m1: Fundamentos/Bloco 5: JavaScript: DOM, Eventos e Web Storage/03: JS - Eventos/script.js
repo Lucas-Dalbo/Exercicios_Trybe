@@ -43,10 +43,28 @@ const buttonsContainer = document.getElementsByClassName("buttons-container")[0]
 
 function btnCriador(nome) {
   let botao = document.createElement("button");
-  botao.className = "btn-holiday";
+  botao.id = "btn-holiday";
   botao.innerText = nome;
 
   buttonsContainer.appendChild(botao);
 };
 
 btnCriador("Feriados");
+
+// 3. Função do Botão
+const btnFeriados = document.querySelector("#btn-holiday");
+const feriados = document.getElementsByClassName("holiday");
+
+
+function corFeriados () {
+  for ( let index = 0; index < feriados.length ; index += 1 ) {
+      if (feriados[index].style.backgroundColor === "") { 
+        feriados[index].style.backgroundColor = "rgb(255,255,0)"; 
+      }
+      else {
+        feriados[index].style.backgroundColor = "";
+      }
+  }
+};
+
+btnFeriados.addEventListener("click", corFeriados);
