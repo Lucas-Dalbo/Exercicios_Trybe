@@ -120,3 +120,6 @@ function criaLegenda (cor) {
 
   myTasks.appendChild(legCor);
 };
+
+criaLegenda("blue");
+
