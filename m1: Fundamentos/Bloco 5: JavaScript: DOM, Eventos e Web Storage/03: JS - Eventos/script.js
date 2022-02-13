@@ -80,11 +80,9 @@ function showFriday () {
   for ( let index = 0; index < sextaFeira.length ; index += 1 ) {
     if (sextaFeira[index].innerText === "SEXTOU") { 
       sextaFeira[index].innerText = sextaFeira[index].innerText = "" + (index*7 + 4);
-      console.log(sextaFeira[index])
     }
     else {
       sextaFeira[index].innerText = "SEXTOU"
-      console.log(sextaFeira[index])
     }
   }
 };
