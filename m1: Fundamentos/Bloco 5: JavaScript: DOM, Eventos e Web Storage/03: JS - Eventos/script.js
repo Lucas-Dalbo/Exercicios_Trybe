@@ -123,3 +123,18 @@ function criaLegenda (cor) {
 
 criaLegenda("blue");
 
+//9. Selecionar Tarefa
+const taskColor = document.getElementsByTagName("div")[3];
+
+function selection (event) {
+  if ( event.target.className === "task") {
+    event.target.className += " selected";
+  }
+  else if ( event.target.className === "task selected") {
+    event.target.className = "task";
+  }
+}
+
+taskColor.addEventListener ("click", selection)
+
+// 10. 
