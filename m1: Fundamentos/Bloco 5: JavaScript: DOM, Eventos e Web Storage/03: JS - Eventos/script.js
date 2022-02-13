@@ -163,6 +163,7 @@ function adicionarCompromisso () {
   else {
     let compro = document.createElement("li");
     compro.innerText = input.value;
+    input.value = "";
     
     taskList.appendChild(compro);
   }
