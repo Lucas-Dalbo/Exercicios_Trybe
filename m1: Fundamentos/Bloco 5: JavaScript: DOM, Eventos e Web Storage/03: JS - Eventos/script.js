@@ -41,15 +41,15 @@ monthDays(dezDaysList);
 // 2. Botão dos Feriados
 const buttonsContainer = document.getElementsByClassName("buttons-container")[0];
 
-function btnCriador(nome) {
+function btnCriador(nome, id) {
   let botao = document.createElement("button");
-  botao.id = "btn-holiday";
+  botao.id = id;
   botao.innerText = nome;
 
   buttonsContainer.appendChild(botao);
 };
 
-btnCriador("Feriados");
+btnCriador("Feriados", "btn-holiday");
 
 // 3. Função do Botão
 const btnFeriados = document.querySelector("#btn-holiday");
@@ -68,3 +68,55 @@ function corFeriados () {
 };
 
 btnFeriados.addEventListener("click", corFeriados);
+
+// 4. Botão da Sexta Feira
+btnCriador("Sexta-feira", "btn-friday");
+
+// 5. Função do Botão 2
+const btnSexta = document.querySelector("#btn-friday");
+const sextaFeira = document.getElementsByClassName("friday");
+
+function showFriday () {
+  for ( let index = 0; index < sextaFeira.length ; index += 1 ) {
+    if (sextaFeira[index].innerText === "SEXTOU") { 
+      sextaFeira[index].innerText = sextaFeira[index].innerText = "" + (index*7 + 4);
+      console.log(sextaFeira[index])
+    }
+    else {
+      sextaFeira[index].innerText = "SEXTOU"
+      console.log(sextaFeira[index])
+    }
+  }
+};
+
+btnSexta.addEventListener("click", showFriday)
+
+// 6. Zoom In e Zoom Out
+days.addEventListener ("mouseover", function (event) {
+  event.target.style.fontSize = "25px";
+});
+
+days.addEventListener ("mouseout", function (event) {
+  event.target.style.fontSize = "20px";
+});
+
+// 7. Tarefa Personalizada
+const myTasks = document.querySelector(".my-tasks")
+
+function criaTarefa (task) {
+  let tarefa = document.createElement("span");
+  tarefa.innerText = task;
+
+  myTasks.appendChild(tarefa);
+};
+
+criaTarefa("jogar pembolim");
+
+//8. Legenda
+function criaLegenda (cor) {
+  let legCor = document.createElement("div");
+  legCor.className = "task";
+  legCor.style.backgroundColor = cor;
+
+  myTasks.appendChild(legCor);
+};
