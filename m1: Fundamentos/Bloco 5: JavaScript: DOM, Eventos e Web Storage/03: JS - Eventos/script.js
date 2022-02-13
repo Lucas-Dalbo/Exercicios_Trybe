@@ -150,3 +150,30 @@ days.addEventListener ("click", function (event){
     event.target.style.color = corTarefa;
   }
 });
+
+// 11. Bõnus
+const addComp = document.getElementById("btn-add");
+const input = document.querySelector("#task-input");
+const taskList = document.querySelector(".task-list");
+
+function adicionarCompromisso () {
+  if ( input.value === "") {
+    alert("Escreva algum compromisso para adicionar!");
+  }
+  else {
+    let compro = document.createElement("li");
+    compro.innerText = input.value;
+    
+    taskList.appendChild(compro);
+  }
+}
+
+function keyEvent (event) {
+  let x = event.key;
+  if ( x === "Enter") {
+    adicionarCompromisso();
+  } 
+}
+
+addComp.addEventListener("click", adicionarCompromisso);
+input.addEventListener("keyup", keyEvent);
