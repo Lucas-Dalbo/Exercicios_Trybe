@@ -125,16 +125,30 @@ criaLegenda("blue");
 
 //9. Selecionar Tarefa
 const taskColor = document.getElementsByTagName("div")[3];
+let corTarefa = "";
+let selecidonado;
 
 function selection (event) {
   if ( event.target.className === "task") {
     event.target.className += " selected";
+    corTarefa = event.target.style.backgroundColor;
+    selecidonado = true;
   }
   else if ( event.target.className === "task selected") {
     event.target.className = "task";
+    corTarefa = "";
+    selecidonado = false;
   }
 }
 
 taskColor.addEventListener ("click", selection)
 
-// 10. 
+// 10. Atribuindo Dias
+days.addEventListener ("click", function (event){
+  if (event.target.style.color !== "") {
+    event.target.style.color = "";
+  }
+  else if (selecidonado === true) {
+    event.target.style.color = corTarefa;
+  }
+});
