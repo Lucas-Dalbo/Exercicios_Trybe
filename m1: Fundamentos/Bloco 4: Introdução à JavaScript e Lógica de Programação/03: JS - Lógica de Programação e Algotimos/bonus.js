@@ -21,107 +21,18 @@ function triRet(size) {
     }
 };
 
-// 3. Triângulo Retângulo do outro lado
-function triRetRev(size) {
-    for (let i = 1; i <= size; i += 1) {
-        let linha = "";
-        if (i === 1) {
-            for (let j = 1; j <= size; j += 1) {
-                if (j === 5) {
-                    linha += caractere;
-                }
-                else {
-                    linha += espaco;
-                }
-            }
-            console.log(linha);
-        }
+// 6. Número Ptimo
+let number = 49;
+let ePrimo = true;
 
-        linha = ""
-        if (i === 2) {
-            for (let j = 1; j <= size; j += 1) {
-                if (j >= 4) {
-                    linha += caractere;
-                }
-                else {
-                    linha += espaco;
-                }
-            }
-            console.log(linha);
-        }
-
-        linha = ""
-        if (i === 3) {
-            for (let j = 1; j <= size; j += 1) {
-                if (j >= 3) {
-                    linha += caractere;
-                }
-                else {
-                    linha += espaco;
-                }
-            }
-            console.log(linha);
-        }
-
-        linha = ""
-        if (i === 4) {
-            for (let j = 1; j <= size; j += 1) {
-                if (j >= 2) {
-                    linha += caractere;
-                }
-                else {
-                    linha += espaco;
-                }
-            }
-            console.log(linha);
-        }
-
-        linha = ""
-        if (i === 5) {
-            for (let j = 1; j <= size; j += 1) {
-                linha += caractere;
-            }
-            console.log(linha);
-        }
-
+for ( let divisor = 2; divisor < number ; divisor += 1) {
+    if ( number % divisor === 0) {
+        ePrimo = false;
+        break;
+    }
+    else {
+        ePrimo = true;
     }
 };
 
-// 4. Piramide 
-function piramide(size) {
-    for (let i = 1; i <= size - 2; i += 1) {
-        let linha = "";
-        if (i === 1) {
-            for (let j = 1; j <= size; j += 1) {
-                if (j === 3) {
-                    linha += caractere;
-                }
-                else {
-                    linha += espaco;
-                }
-            }
-            console.log(linha);
-        }
-
-        linha = "";
-        if (i === 2) {
-            for (let j = 1; j <= size; j += 1) {
-                if (j > 1 && j < 5) {
-                    linha += caractere;
-                }
-                else {
-                    linha += espaco;
-                }
-            }
-            console.log(linha);
-        }
-
-        linha = "";
-        if (i === 3) {
-            for (let j = 1; j <= size; j += 1) {
-                linha += caractere;
-            }
-            console.log(linha);
-        }
-    }
-};
+console.log(ePrimo);
