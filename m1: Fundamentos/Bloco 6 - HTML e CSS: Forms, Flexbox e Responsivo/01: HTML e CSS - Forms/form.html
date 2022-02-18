@@ -13,8 +13,9 @@
     <header id="cabeca">
         <h1 id="title">Formulário de Férias</h1>
     </header>
-    <main id="form-body">
-        <form action="" method="get">
+
+    <form action="" method="get">
+        <main id="form-body">
             <section id="info">
                 <label for="name">Nome:</label>
                 <input type="text" name="name" id="name" placeholder="Seu nome" required min="10" max="40"><br>
@@ -32,19 +33,27 @@
                 <label for="montanhas">Montanhas</label>
             </section>
             <p id="pergunta">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
-            <textarea name="resposta" id="resposta" cols="63" rows="10" maxlength="500" placeholder="Sua resposta!"></textarea>
+            <textarea name="resposta" id="resposta" cols="63" rows="10" maxlength="500"
+                placeholder="Sua resposta!"></textarea>
             <label for="data">Qual o dia ideal para sua viagem?</label>
             <input type="date" name="data" id="data">
             <div id="termos">
                 <label for="check1">
-                <input type="checkbox" name="trybe" id="check1">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+                    <input type="checkbox" name="trybe" id="check1">Gostaria de receber outras incríveis oportunidades
+                    oferecidas pela Trybe?
                 </label><br>
                 <label for="check2">
-                    <input type="checkbox" name="conf" id="check2">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+                    <input type="checkbox" name="conf" id="check2">Concordo que imagens das minhas férias poderão ser
+                    usadas na divulgação de concursos futuros.
                 </label>
             </div>
-        </form>
-    </main>
+        </main>
+        <div id="btn-list">
+            <button type="submit" id="send" class="butao">Enviar</button>
+            <button type="reset" id="erase" class="butao">Apagar</button>
+        </div>
+    </form>
+
 
 </body>
 
