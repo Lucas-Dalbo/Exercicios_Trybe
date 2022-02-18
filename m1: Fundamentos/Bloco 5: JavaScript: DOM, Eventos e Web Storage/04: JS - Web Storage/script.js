@@ -2,6 +2,11 @@ const texto = document.getElementsByClassName("text");
 const paragrafo = document.getElementsByTagName("p");
 const corpo = document.querySelector("main");
 
+window.onload = function () {
+    corpo.style.backgroundColor = localStorage.getItem("corFundo");
+    color = parseInt(localStorage.getItem("valorFundo"));
+}
+
 // Alterar cor do fundo
 const btnBackColor = document.getElementById("btnBackColor");
 let color = 1;
@@ -19,6 +24,8 @@ btnBackColor.addEventListener("click", function () {
         corpo.style.backgroundColor = "";
         color = 1;
     }
+    localStorage.setItem("corFundo", corpo.style.backgroundColor)
+    localStorage.setItem("valorfundo", JSON.stringify(color));
 });
 
 // Alterar cor do Texto
