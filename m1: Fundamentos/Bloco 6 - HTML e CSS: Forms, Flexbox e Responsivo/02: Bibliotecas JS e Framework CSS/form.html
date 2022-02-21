@@ -6,55 +6,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário | O formulário</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
 </head>
 
 <body>
     <header id="cabeca">
-        <h1 id="title">Formulário de Férias</h1>
+        <h1 class="title">Formulário de Férias</h1>
     </header>
 
     <form action="" method="get">
         <main id="campos">
-            <section id="info">
-                <label for="name">Nome:</label>
-                <input type="text" name="name" id="name" placeholder="Seu nome" required min="10" max="40">
-                <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email" placeholder="Seu e-mail" required min="10" max="50">
-            </section>
-            <section id="destinos">
-                <input type="radio" name="destino" class="destino" id="cidade">
-                <label for="cidade">Cidade</label>
-                <input type="radio" name="destino" class="destino" id="campo">
-                <label for="campo">Campo</label>
-                <input type="radio" name="destino" class="destino" id="praia">
-                <label for="praia">Praia</label>
-                <input type="radio" name="destino" class="destino" id="montanhas">
-                <label for="montanhas">Montanhas</label>
-            </section>
-            <p id="pergunta">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
-            <textarea name="resposta" id="resposta" cols="63" rows="10" maxlength="500"
-                placeholder="Sua resposta!"></textarea>
-            <label for="data">Qual o dia ideal para sua viagem?</label>
-            <input type="date" name="data" id="data">
+            <div id="info" class="control">
+                <label class="label" for="name">Nome:</label>
+                <input class="input" type="text" name="name" id="name" placeholder="Seu nome" required min="10" max="40">
+                <label class="label" for="email">E-mail:</label>
+                <input class="input" type="email" name="email" id="email" placeholder="Seu e-mail" required min="10" max="50">
+            </div>
+            <div id="destinos" class="control">
+                <input type="radio" name="destino" id="cidade">
+                <label class="radio" for="cidade">Cidade</label>
+                <input type="radio" name="destino" id="campo">
+                <label class="radio" for="campo">Campo</label>
+                <input type="radio" name="destino" id="praia">
+                <label class="radio" for="praia">Praia</label>
+                <input type="radio" name="destino" id="montanhas">
+                <label class="radio" for="montanhas">Montanhas</label>
+            </div>
+            <div>
+                <p id="pergunta">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
+                <textarea name="resposta" id="resposta" cols="63" rows="10" maxlength="500"
+                    placeholder="Sua resposta!"></textarea>
+            </div>
+            <div>
+                <label for="data">Qual o dia ideal para sua viagem?</label>
+                <input type="date" name="data" id="data">
+                <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+            </div>
             <div id="termos">
                 <label for="check1">
                     <input type="checkbox" name="trybe" id="check1">Gostaria de receber outras incríveis oportunidades
                     oferecidas pela Trybe?
                 </label>
                 <label for="check2">
-                    <input type="checkbox" name="conf" id="check2" required>Concordo que imagens das minhas férias poderão ser
+                    <input type="checkbox" name="conf" id="check2" required>Concordo que imagens das minhas férias
+                    poderão ser
                     usadas na divulgação de concursos futuros.
                 </label>
             </div>
         </main>
         <div id="btn-list">
-            <button type="submit" id="send" class="butao">Enviar</button>
-            <button type="reset" id="erase" class="butao">Apagar</button>
+            <button type="submit" id="send">Enviar</button>
+            <button type="reset" id="erase">Apagar</button>
+            <script>const validate = new window.JustValidate('#form');</script>
         </div>
     </form>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
