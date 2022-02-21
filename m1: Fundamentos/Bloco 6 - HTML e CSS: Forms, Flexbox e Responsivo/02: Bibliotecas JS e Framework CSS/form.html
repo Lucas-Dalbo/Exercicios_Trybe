@@ -8,7 +8,7 @@
     <title>Formulário | O formulário</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -16,54 +16,80 @@
         <h1 class="title">Formulário de Férias</h1>
     </header>
 
-    <form action="" method="get">
-        <main id="campos">
-            <div id="info" class="control">
+    <form action="" method="get" class="field">
+        <main id="campos" class="control">
+            <div id="info" class="field">
                 <label class="label" for="name">Nome:</label>
-                <input class="input" type="text" name="name" id="name" placeholder="Seu nome" required min="10" max="40">
+                <input class="input is-rounded is-info" type="text" name="name" id="name" placeholder="Seu nome"
+                    required min="10" max="40">
                 <label class="label" for="email">E-mail:</label>
-                <input class="input" type="email" name="email" id="email" placeholder="Seu e-mail" required min="10" max="50">
+                <input class="input is-rounded is-info" type="email" name="email" id="email" placeholder="Seu e-mail"
+                    required min="10" max="50">
             </div>
-            <div id="destinos" class="control">
-                <input type="radio" name="destino" id="cidade">
-                <label class="radio" for="cidade">Cidade</label>
-                <input type="radio" name="destino" id="campo">
-                <label class="radio" for="campo">Campo</label>
-                <input type="radio" name="destino" id="praia">
-                <label class="radio" for="praia">Praia</label>
-                <input type="radio" name="destino" id="montanhas">
-                <label class="radio" for="montanhas">Montanhas</label>
+
+            <div id="destinos" class="field">
+                <label class="radio" for="cidade">
+                    <input type="radio" name="destino" id="cidade">
+                    Cidade
+                </label>
+                <label class="radio" for="campo">
+                    <input type="radio" name="destino" id="campo">
+                    Campo
+                </label>
+                <label class="radio" for="praia">
+                    <input type="radio" name="destino" id="praia">
+                    Praia
+                </label>
+                <label class="radio" for="montanhas">
+                    <input type="radio" name="destino" id="montanhas">
+                    Montanhas
+                </label>
             </div>
-            <div>
-                <p id="pergunta">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
-                <textarea name="resposta" id="resposta" cols="63" rows="10" maxlength="500"
-                    placeholder="Sua resposta!"></textarea>
+
+            <div class="field">
+                <p class="content" id="pergunta">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso
+                    TrybeTrip?</p>
+                <textarea class="textarea is-info has-fixed-size" name="resposta" id="resposta" cols="63" rows="10"
+                    maxlength="500" placeholder="Sua resposta!"></textarea>
             </div>
-            <div>
+
+            <div class="field">
                 <label for="data">Qual o dia ideal para sua viagem?</label>
-                <input type="date" name="data" id="data">
+                <input type="text" id="datepicker">
                 <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
             </div>
-            <div id="termos">
-                <label for="check1">
-                    <input type="checkbox" name="trybe" id="check1">Gostaria de receber outras incríveis oportunidades
-                    oferecidas pela Trybe?
+
+            <div id="termos" class="field">
+                <label class="checkbox" for="check1">
+                    <input type="checkbox" name="trybe" id="check1">
+                    Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
                 </label>
-                <label for="check2">
-                    <input type="checkbox" name="conf" id="check2" required>Concordo que imagens das minhas férias
-                    poderão ser
-                    usadas na divulgação de concursos futuros.
+                <label class="checkbox" for="check2">
+                    <input type="checkbox" name="conf" id="check2" required>
+                    Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
                 </label>
             </div>
+
         </main>
-        <div id="btn-list">
-            <button type="submit" id="send">Enviar</button>
-            <button type="reset" id="erase">Apagar</button>
-            <script>const validate = new window.JustValidate('#form');</script>
+
+        <div id="btn-list" class="control">
+            
+                <button class="button is-success" type="submit" id="send">Enviar</button>
+                <button class="button is-danger" type="reset" id="erase">Apagar</button>
+                <script>const validate = new window.JustValidate('#form');</script>
+
         </div>
+
     </form>
 
     <script src="script.js"></script>
+    <script>
+        var picker = new Pikaday({
+            field: document.getElementById('datepicker'),
+            format: 'D MMM YYYY',
+        });
+    </script>
+        <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
 </body>
 
 </html>
