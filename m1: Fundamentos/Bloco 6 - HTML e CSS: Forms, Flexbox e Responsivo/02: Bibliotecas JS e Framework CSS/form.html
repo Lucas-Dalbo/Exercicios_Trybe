@@ -6,18 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário | O formulário</title>
+
+    <link  rel ="stylesheet" href ="dist/css/DatePickerX.min.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header id="cabeca">
-        <h1 class="title">Formulário de Férias</h1>
+    <header id="cabeca" class="container is-fluid">
+        <h1 class="title container is-fluid">Formulário de Férias</h1>
     </header>
 
-    <form action="" method="get" class="field">
-        <main id="campos" class="control">
+    <form action="" method="get" class="field container is-fluid">
+        <main id="campos" class="control container is-fluid">
             <div id="info" class="field">
                 <label class="label" for="name">Nome:</label>
                 <input class="input is-rounded is-info" type="text" name="name" id="name" placeholder="Seu nome"
@@ -54,9 +55,10 @@
             </div>
 
             <div class="field">
-                <label for="data">Qual o dia ideal para sua viagem?</label>
-                <input type="text" id="datepicker">
-                <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+                <label for="datepicker">Qual o dia ideal para sua viagem?
+                <input type="date" id="datepicker">
+                </label>
+                <script  src ="dist/js/DatePickerX.min.js"> document.getElementById("datepicker").DatePickerX.init(); </script>
             </div>
 
             <div id="termos" class="field">
@@ -76,24 +78,19 @@
 
         </main>
 
-        <div id="btn-list" class="control">
+        <div id="btn-list" class="control container is-fluid">
             
                 <button class="button is-success" type="submit" id="send">Enviar</button>
                 <button class="button is-danger" type="reset" id="erase">Apagar</button>
-                <script>const validate = new window.JustValidate('#form');</script>
+
 
         </div>
 
     </form>
 
-    <script src="script.js"></script>
-    <script>
-        var picker = new Pikaday({
-            field: document.getElementById('datepicker'),
-            format: 'D MMM YYYY',
-        });
+
+    <script src="script.js">
     </script>
-        <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
 </body>
 
 </html>
