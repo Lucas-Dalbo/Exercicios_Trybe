@@ -71,7 +71,7 @@
                 </div>
                 <div>
                     <label class="checkbox" for="check2">
-                        <input type="checkbox" name="conf" id="check2" required>
+                        <input type="checkbox" name="conf" id="check2">
                         Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
                     </label>
                 </div>
@@ -94,16 +94,19 @@
         var picker = new Pikaday({ field: document.getElementById('datepicker') });
     </script>
     <script>
-        const validate = new window.JustValidate('#form');
+        const validation = new window.JustValidate('#form');
 
-        validate.addField('#name', [
+        validation
+            .addField('#name', [
                 {
-                    rule: 'minLenght',
+                    rule: 'minLength',
                     value: 10,
+                    errorMessage: 'O nome precisa ter mais de 10 caracteres!'
                 },
                 {
                     rule: 'maxLength',
                     value: 40,
+                    errorMessage: 'O nome precisa ter menos de 40 caracteres!'
                 },
                 {
                     rule: 'required',
@@ -112,12 +115,14 @@
             ])
             .addField('#email', [
                 {
-                    rule: 'minLenght',
+                    rule: 'minLength',
                     value: 10,
+                    errorMessage: 'E-mail precisa ter no minimo 10 caracteres!'
                 },
                 {
                     rule: 'maxLength',
-                    value: 40,
+                    value: 50,
+                    errorMessage: 'E-mail precisa ter no máximo 50 caracteres!'
                 },
                 {
                     rule: 'required',
@@ -128,6 +133,15 @@
                     errorMessage: 'Use um e-mail válido',
                 },
             ])
+            .addField('#check2', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Para participar, você deve concordar com os termos.'
+                },
+            ])
+            .onSuccess((event) => {
+                console.log('Tudo certo por aqui!', event);
+            });
     </script>
     <script src="script.js"></script>
 </body>
