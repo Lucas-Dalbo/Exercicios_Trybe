@@ -16,7 +16,15 @@ window.onload = function () {
     for ( let text of texto) {
         text.style.fontFamily = localStorage.getItem('familiaTexto');
     }
-    fontFamily.value = localStorage.getItem('familiaTexto');
+    if (localStorage.getItem('familiaTexto')) {
+        fontFamily.value = localStorage.getItem('familiaTexto');
+    }
+    for ( let text of texto) {
+        text.style.lineHeight = localStorage.getItem("espacoTexto");
+    }
+    if (localStorage.getItem('espacoTexto')) {
+        espaco.value = localStorage.getItem('espacoTexto');
+    }
 }
 
 // Alterar cor do fundo
@@ -91,4 +99,18 @@ fontFamily.addEventListener('input', function() {
         text.style.fontFamily = fontFamily.value;
     }
     localStorage.setItem("familiaTexto", fontFamily.value)
+});
+
+// Espaçamento entre linhas
+const btnEspaco = document.getElementById('btnSpace');
+const espaco = document.getElementById('altura-linha');
+espaco.style.display = 'none';
+
+btnEspaco.addEventListener('click', showInput);
+
+espaco.addEventListener('input', function() {
+    for ( let text of texto) {
+        text.style.lineHeight = `${espaco.value}px`;
+    }
+    localStorage.setItem("espacoTexto", `${espaco.value}px`)
 });

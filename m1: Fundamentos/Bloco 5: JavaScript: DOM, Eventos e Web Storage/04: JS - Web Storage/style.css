@@ -23,7 +23,7 @@ h1 {
   margin: 2px 0;
 }
 
-#font-fam {
+#font-fam, #altura-linha {
   font-size: 14px;
   padding: 3px;
 }
