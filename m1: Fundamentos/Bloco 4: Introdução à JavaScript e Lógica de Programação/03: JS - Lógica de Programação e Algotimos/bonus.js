@@ -38,7 +38,33 @@ function triOps(size) {
     posicionador -= 1;
   }
 }
-triOps(5);
+
+// 4. Pirâmide
+function piramide(size) {
+  let altura;
+  if (size % 2 !== 0) {  
+    altura = (size + 1) / 2;
+  } else {
+      altura = size / 2;
+  }
+  let posEsq = altura;
+  let posDir = altura;
+  for (let i = 1; i <= altura; i += 1) {
+    let linha = '';
+    for (let j = 1; j <= size; j += 1) {
+      if (j >= posEsq && j <= posDir) {
+        linha += caractere;
+      }
+      else {
+        linha += espaco;
+      }
+    }
+    console.log(linha);
+    posEsq -= 1;
+    posDir += 1;
+  }
+}
+piramide(11);
 
 // 6. Número Primo
 let number = 49;
