@@ -54,8 +54,7 @@ function piramide(size) {
     for (let j = 1; j <= size; j += 1) {
       if (j >= posEsq && j <= posDir) {
         linha += caractere;
-      }
-      else {
+      } else {
         linha += espaco;
       }
     }
@@ -64,7 +63,26 @@ function piramide(size) {
     posDir += 1;
   }
 }
-piramide(11);
+
+// 5. Pirâmide Vazia.
+function emptPiramide(size) {
+  let altura = (size +1) / 2;
+  let posEsq = altura;
+  let posDir = altura;
+  for (let i = 1; i <= altura; i += 1) {
+    let linha = '';
+    for (let j = 1; j <= size; j += 1) {
+      if (j !== posEsq && j !== posDir && i < altura) {
+        linha += espaco;
+      } else {
+        linha += caractere;
+      }
+    }
+    console.log(linha);
+    posEsq -= 1;
+    posDir += 1;
+  }
+}
 
 // 6. Número Primo
 let number = 49;
@@ -73,10 +91,6 @@ let ePrimo = true;
 for (let divisor = 2; divisor < number; divisor += 1) {
     if (number % divisor === 0) {
         ePrimo = false;
-        break;
-    }
-    else {
-        ePrimo = true;
     }
 };
 
