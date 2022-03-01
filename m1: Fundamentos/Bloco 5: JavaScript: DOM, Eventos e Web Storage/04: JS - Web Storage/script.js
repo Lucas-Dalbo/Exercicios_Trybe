@@ -13,6 +13,10 @@ window.onload = function () {
     for ( let text of texto) {
         text.style.fontSize = localStorage.getItem('tamanhoTexto');
     }
+    for ( let text of texto) {
+        text.style.fontFamily = localStorage.getItem('familiaTexto');
+    }
+    fontFamily.value = localStorage.getItem('familiaTexto');
 }
 
 // Alterar cor do fundo
@@ -73,4 +77,18 @@ fontSize.addEventListener('input', function() {
     }
     localStorage.setItem("tamanhoTexto", `${fontSize.value}px`)
     localStorage.setItem("tamValor", fontSize.value)
+});
+
+// Família da fonte
+const btnFamily = document.getElementById('btnFontFamily');
+const fontFamily = document.getElementById('font-fam');
+fontFamily.style.display = 'none';
+
+btnFamily.addEventListener('click', showInput);
+
+fontFamily.addEventListener('input', function() {
+    for ( let text of texto) {
+        text.style.fontFamily = fontFamily.value;
+    }
+    localStorage.setItem("familiaTexto", fontFamily.value)
 });
