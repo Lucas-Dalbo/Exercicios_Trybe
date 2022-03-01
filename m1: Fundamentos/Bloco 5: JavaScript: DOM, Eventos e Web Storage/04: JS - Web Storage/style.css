@@ -1,13 +1,24 @@
-#personalização {
-    background-color: rgb(3, 19, 32);
-    color: rgb(243, 240, 55);
-    padding: 5px;
-    text-align: center;
-    margin-bottom: 10px;
-};
+header {
+  background-color: rgb(3, 19, 32);
+  color: rgb(243, 240, 55);
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
 
-#upText {
+.btn {
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.text {
+  font-size: 18px;
+}
+
+h1 {
   display: block;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 2px 0;
 }
