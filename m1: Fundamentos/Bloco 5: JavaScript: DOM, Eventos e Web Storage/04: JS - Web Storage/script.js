@@ -4,7 +4,7 @@ const corpo = document.querySelector("main");
 
 window.onload = function () {
     corpo.style.backgroundColor = localStorage.getItem("corFundo");
-    color = parseInt(localStorage.getItem("valorFundo"));
+    color = JSON.parse(localStorage.getItem("valorfundo"));
     textColor.value = localStorage.getItem('corTexto');
     for ( let text of texto) {
         text.style.color = localStorage.getItem('corTexto');
