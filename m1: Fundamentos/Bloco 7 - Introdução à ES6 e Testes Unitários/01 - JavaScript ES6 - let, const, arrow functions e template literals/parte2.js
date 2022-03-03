@@ -28,3 +28,18 @@ botao.addEventListener('click', () => {
     clickCount += 1;
     clickCount === 1 ? cliques.innerText = `O botão foi apertado ${clickCount} vez` : cliques.innerText = `O botão foi apertado ${clickCount} vezes`; 
 });
+
+// 4. 
+const skills = ['HTML', 'CSS', 'JavaScript', 'ES6', 'DOM'];
+
+const juncao = txt1 => `${txt1} Minhas cinco principais habilidades são:
+${skills.sort()}
+#goTrybe`;
+
+const chamada = string => {
+    let txtPadrao = 'Tryber x aqui!';
+    let chmPessoa = txtPadrao.replace('x', string);
+    return juncao (chmPessoa);
+}
+
+console.log(chamada('Jãozin'));
