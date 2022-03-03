@@ -17,3 +17,14 @@ const maiorPalavra = string => {
 }
 
 maiorPalavra('Antônio foi no banheiro e não sabemos o que aconteceu');
+
+// 3. 
+const botao = document.querySelector('#button');
+const cliques = document.createElement('p');
+document.querySelector('main').appendChild(cliques);
+let clickCount = 0;
+
+botao.addEventListener('click', () => {
+    clickCount += 1;
+    clickCount === 1 ? cliques.innerText = `O botão foi apertado ${clickCount} vez` : cliques.innerText = `O botão foi apertado ${clickCount} vezes`; 
+});
