@@ -18,14 +18,27 @@
     function sum() {
       const value1 = document.getElementById('value1').value;
       const value2 = document.getElementById('value2').value;
-      const result = parseInt(value1) + parseInt(value2);
-      document.getElementById('result').innerHTML = `Resultado: ${result}`;
+      // Parte da Atividade 1
+      try {
+          verify (value1, value2);
+          const result = parseInt(value1) + parseInt(value2);
+          document.getElementById('result').innerHTML = `Resultado: ${result}`;
+      } catch(e) {
+        document.getElementById('result').innerHTML = `Resultado: ${e.message}`;
+      } finally {
       document.getElementById('value1').value = '';
       document.getElementById('value2').value = '';
+      }
     }
     window.onload = () => {
       const button = document.getElementById('button');
       button.addEventListener('click', sum);
+    }
+    // 1 - Crie um erro personalizado que será chamado se a pessoa usuária digitar apenas um número.
+    const verify = (num1, num2) => {
+        if (num1 === '' || num2 === '') {
+            throw new Error(`Insira valores válidos!`)
+        }
     }
   </script>
 </body>
