@@ -45,7 +45,12 @@ const order = {
   const orderModifier = (order) => {
     // Adicione abaixo as informações necessárias.
     order.name = 'Juqinha Pé de Pato';
+    order['payment']['total'] = 50.01;
+    let comidas = Object.keys(order.order.pizza);
+    let bebidas = Object.values(order.order.drinks.coke);
+    let pagamento = Object.values(order.payment);
 
+    console.log(`Olá ${order.name}, o seu pedido de ${comidas[0]}, ${comidas[1]} e ${bebidas[0]} ficou em R$ ${pagamento[0]}.`);
   }
   
   orderModifier(order);
