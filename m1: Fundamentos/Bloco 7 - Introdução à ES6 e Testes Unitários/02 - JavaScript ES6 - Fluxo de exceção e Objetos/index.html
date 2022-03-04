@@ -18,7 +18,7 @@
     function sum() {
       const value1 = document.getElementById('value1').value;
       const value2 = document.getElementById('value2').value;
-      // Parte da Atividade 1
+// Parte da Atividade 1
       try {
           verify (value1, value2);
           const result = parseInt(value1) + parseInt(value2);
@@ -34,10 +34,14 @@
       const button = document.getElementById('button');
       button.addEventListener('click', sum);
     }
-    // 1 - Crie um erro personalizado que será chamado se a pessoa usuária digitar apenas um número.
+// 1 - Crie um erro personalizado que será chamado se a pessoa usuária digitar apenas um número.
     const verify = (num1, num2) => {
         if (num1 === '' || num2 === '') {
-            throw new Error(`Insira valores válidos!`)
+            throw new Error(`Um dos valores está sem valor!`)
+        }
+// 2 - Agora adicione uma outra exceção, caso a pessoa usuária digite um valor que não seja numérico.
+        if ( isNaN(num1) || isNaN(num2)) {
+            throw new Error(`Utilize somente números!`)
         }
     }
   </script>
