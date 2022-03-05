@@ -40,8 +40,20 @@ const lesson1 = {
   console.log(objValues(lesson3));
 
   // 5. Crie um objeto de nome allLessons , que deve agrupar todas as aulas através do Object.assign . Cada chave desse novo objeto será uma aula, sendo essas chaves: lesson1 , lesson2 e lesson3 . Ao executar o comando console.log(allLessons) , a saída deverá ser a seguinte:
-  const allLessons = (obj1, obj2, obj3) => {
-    let allLessons = {lesson1: Object.assign({}, obj1), lesson2: Object.assign({},obj2), lesson3: Object.assign({},obj3)};
-    console.log(allLessons);
+  let allLessons;
+  const allLess = (obj1, obj2, obj3) => {
+    allLessons = {lesson1: Object.assign({}, obj1), lesson2: Object.assign({},obj2), lesson3: Object.assign({},obj3)};
+    return allLessons
   }
-  allLessons(lesson1,lesson2,lesson3);
+  allLess(lesson1,lesson2,lesson3);
+  console.log(allLessons);
+
+  // 6. Usando o objeto criado no exercício 5, crie uma função que retorne o número total de estudantes em todas as aulas.
+  const numbEstudantes = obj => {
+    let estudantes = 0;
+    for (let key in obj) {
+      estudantes += obj[key].numeroEstudantes;
+    }
+    return `No total, existem ${estudantes} estudantes.`
+  }
+  console.log(numbEstudantes(allLessons));
