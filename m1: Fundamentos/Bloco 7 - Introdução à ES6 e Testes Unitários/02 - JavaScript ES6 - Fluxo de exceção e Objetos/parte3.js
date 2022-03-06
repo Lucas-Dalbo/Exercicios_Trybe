@@ -77,3 +77,15 @@ const lesson1 = {
   console.log(Object.entries(lesson3));
   console.log(checkPairs(lesson3, 'turno', 'noite'));
   console.log(checkPairs(lesson3, 'materia', 'Física'));
+
+  // BÔNUS
+  // 1. Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. Use o objeto criado no exercício 5.
+  const totalEstudantes = (obj, materia) => {
+    let allStudents = 0;
+    for (let key in obj) {
+      obj[key]['materia'] === materia ? allStudents += obj[key]['numeroEstudantes'] : allStudents += 0;
+    }
+    return allStudents
+  }
+
+  console.log(totalEstudantes(allLessons, 'Matemática'));
