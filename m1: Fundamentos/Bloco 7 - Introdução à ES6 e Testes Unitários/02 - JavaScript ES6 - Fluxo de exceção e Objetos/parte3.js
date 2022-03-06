@@ -89,3 +89,21 @@ const lesson1 = {
   }
 
   console.log(totalEstudantes(allLessons, 'Matemática'));
+
+  // 2. Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora, as aulas que ele ou ela ministrou e o número total de estudantes. Use o objeto criado no exercício 5.
+  const teacherReport = (obj, prof) => {
+    let report = {teacher: prof, aulas: [], estudantes: 0}
+    for (let key in obj) {
+      if (obj[key]['professor'] === prof) {
+        report.aulas.push(obj[key]['materia']);
+        report.estudantes += obj[key]['numeroEstudantes'];
+      }
+    }
+    if (report.aulas.length === 0 && report.estudantes === 0) {
+      return 'Professor(a) inexistente'
+    }
+    return report
+  }
+
+  console.log(teacherReport(allLessons, 'Maria Clara'));
+  
