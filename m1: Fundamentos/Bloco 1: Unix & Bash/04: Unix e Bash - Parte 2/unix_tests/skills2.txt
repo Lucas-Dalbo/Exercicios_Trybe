@@ -1,8 +1,0 @@
-Internet
-Unix
-Bash
-Java
-Java Script
-CSS
-HTML
-Flash
