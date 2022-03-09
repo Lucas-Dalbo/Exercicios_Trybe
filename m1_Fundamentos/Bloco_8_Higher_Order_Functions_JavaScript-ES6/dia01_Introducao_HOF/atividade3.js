@@ -10,9 +10,7 @@ const nota = (gabarito, folhaResposta, callback) => {
 const respostas = (folhaA, folhaB) => {
     let nota = 0;
     for (let id in folhaB) {
-        if (folhaB[id] === 'N.A') {
-            nota = nota;
-        } else {
+        if (folhaB[id] !== 'N.A') {
             folhaB[id] === folhaA[id] ? nota += 1 : nota -= 0.5;
         }
     }
