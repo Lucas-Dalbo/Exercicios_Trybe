@@ -1,4 +1,5 @@
 const registro = (nome) => {
+// Pode ser substituido por nome.replace(/ /g,'_');
 let name = nome.split(' ');
 let emailName;
 if (name.length > 1) {
@@ -9,6 +10,7 @@ if (name.length > 1) {
 } else {
     emailName = name[0];
 }
+// Usando replace, emailName = nome.replace(/ /g,'_');
 return {
   nomeCompleto: nome,
   email: `${emailName.toLowerCase()}.@trybe.com`,
