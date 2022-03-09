@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário | O formulário</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+</head>
+
+<body class="container">
+    <header id="cabeca" class="container is-fluid">
+        <h1 class="title container is-fluid">Formulário de Férias</h1>
+    </header>
+
+    <form action="" method="get" id="form" class="field container is-fluid">
+        <main id="campos" class="control container is-fluid">
+            <div id="info" class="field">
+                <label class="label" for="name">Nome:</label>
+                <input class="input is-rounded is-info" type="text" name="name" id="name" placeholder="Seu nome">
+
+                <label class="label" for="email">E-mail:</label>
+                <input class="input is-rounded is-info" type="email" name="email" id="email" placeholder="Seu e-mail">
+            </div>
+
+            <div id="destinos" class="field">
+                <label class="radio" for="cidade">
+                    <input type="radio" name="destino" id="cidade">
+                    Cidade
+                </label>
+                <label class="radio" for="campo">
+                    <input type="radio" name="destino" id="campo">
+                    Campo
+                </label>
+                <label class="radio" for="praia">
+                    <input type="radio" name="destino" id="praia">
+                    Praia
+                </label>
+                <label class="radio" for="montanhas">
+                    <input type="radio" name="destino" id="montanhas">
+                    Montanhas
+                </label>
+            </div>
+
+            <div class="field">
+                <p class="content" id="pergunta">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso
+                    TrybeTrip?</p>
+                <textarea class="textarea is-info has-fixed-size" name="resposta" id="resposta" cols="63" rows="10"
+                    maxlength="500" placeholder="Sua resposta!"></textarea>
+            </div>
+
+            <div class="field">
+                <label for="datepicker">Qual o dia ideal para sua viagem?
+                    <input type="text" id="datepicker">
+                </label>
+                <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+            </div>
+
+            <div id="termos" class="field">
+                <div>
+                    <label class="checkbox" for="check1">
+                        <input type="checkbox" name="trybe" id="check1">
+                        Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+                    </label>
+                </div>
+                <div>
+                    <label class="checkbox" for="check2">
+                        <input type="checkbox" name="conf" id="check2">
+                        Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+                    </label>
+                </div>
+            </div>
+
+        </main>
+        <hr>
+        <div id="btn-list" class="control container is-fluid">
+
+            <button class="button is-success" type="submit" id="send">Enviar</button>
+            <button class="button is-danger" type="reset" id="erase">Apagar</button>
+
+
+        </div>
+
+    </form>
+
+
+    <script>
+        var picker = new Pikaday({ field: document.getElementById('datepicker') });
+    </script>
+    <script>
+        const validation = new window.JustValidate('#form');
+
+        validation
+            .addField('#name', [
+                {
+                    rule: 'minLength',
+                    value: 10,
+                    errorMessage: 'O nome precisa ter mais de 10 caracteres!'
+                },
+                {
+                    rule: 'maxLength',
+                    value: 40,
+                    errorMessage: 'O nome precisa ter menos de 40 caracteres!'
+                },
+                {
+                    rule: 'required',
+                    errorMessage: 'Coloque o seu nome',
+                },
+            ])
+            .addField('#email', [
+                {
+                    rule: 'minLength',
+                    value: 10,
+                    errorMessage: 'E-mail precisa ter no minimo 10 caracteres!'
+                },
+                {
+                    rule: 'maxLength',
+                    value: 50,
+                    errorMessage: 'E-mail precisa ter no máximo 50 caracteres!'
+                },
+                {
+                    rule: 'required',
+                    errorMessage: 'Coloque o seu e-mail',
+                },
+                {
+                    rule: 'email',
+                    errorMessage: 'Use um e-mail válido',
+                },
+            ])
+            .addField('#check2', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Para participar, você deve concordar com os termos.'
+                },
+            ])
+            .onSuccess((event) => {
+                console.log('Tudo certo por aqui!', event);
+            });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

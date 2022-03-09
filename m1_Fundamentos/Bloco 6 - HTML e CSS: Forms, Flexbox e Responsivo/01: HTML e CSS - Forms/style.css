@@ -1,0 +1,54 @@
+#campos {
+    border: solid black 2px;
+    padding: 15px;
+    width: 70%;
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+    color: grey;
+}
+
+#resposta {
+    resize: none;
+    width: 80%;
+    padding: 5px;
+    margin-right: 20%;
+    margin-bottom: 10px;
+}
+
+#name, #email {
+    margin-bottom: 10px;
+    margin-left: 2px;
+    width: 25%;
+    padding: 3px;
+}
+
+#name {
+    margin-left: 5px;
+}
+
+#destinos, #check1, #check2 {
+    margin-top: 10px;
+}
+
+#pergunta {
+    margin-bottom: 5px;
+}
+
+.butao {
+    padding: 10px;
+    width: 150px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: grey;
+    border: 2px gray solid;
+    margin-right: 10px;
+}
+
+#title {
+    margin-bottom: 5px;
+}
+
+#data {
+    color: grey;
+}

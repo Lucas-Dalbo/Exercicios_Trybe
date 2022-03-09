@@ -1,0 +1,40 @@
+ol li {
+  background-color: yellow;
+}
+ol li:nth-of-type(2n) {
+  color: green;
+}
+ol li:nth-of-type(2n+1){
+  text-transform: uppercase;
+}
+li {
+  font-size: 20px;
+}
+li em {
+  font-weight: bold;
+}
+
+/* Requisito 5 (A segunda parte não foi feita do modo requisitado) */
+ul:nth-of-type(1) li:nth-child(-n+3) {
+  color: blue;
+  }
+ul:nth-of-type(1) li:nth-child(3) {
+    background-color: pink;
+  }
+
+/* Requisito Bônus */
+ul:nth-of-type(2) li:nth-of-type(1) :hover {
+  background-color: orange;
+}
+ul:nth-of-type(2) li:nth-of-type(2) :hover {
+  background-color: greenyellow;
+} 
+ul:nth-of-type(2) li:nth-of-type(3) :hover {
+  background-color: black;
+} 
+ul:nth-of-type(2) li:nth-of-type(4) :hover {
+  background-color: yellow;
+} 
+ul:nth-of-type(2) li:nth-of-type(5) :hover {
+  background-color: green;
+} 
