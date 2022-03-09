@@ -3,7 +3,7 @@
 // O retorno da sua HOF deve ser uma string (Ex: "Tente novamente" ou "Parabéns você ganhou").
 
 const sorteio = (aposta, callback) => {
-    let numSorteado = Math.floor(Math.random() * 5 + 1 );
+    let numSorteado = Math.floor(Math.random() * 5) + 1;
     if (callback(numSorteado, aposta)) return `Parabéns, você ganhou!`
     return `Tente novamente`;
 }
