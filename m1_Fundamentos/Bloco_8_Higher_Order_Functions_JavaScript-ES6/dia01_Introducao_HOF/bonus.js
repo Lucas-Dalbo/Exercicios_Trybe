@@ -32,28 +32,22 @@ const warriorDMG = () => Math.floor(Math.random() * (warrior.weaponDmg * warrior
 // 3 - Crie uma função que retorna um objeto com duas chaves e dois valores contendo o dano e a mana gasta pelo mago em um turno.
 // O dano será um número aleatório entre o valor do atributo intelligence (dano mínimo) e o valor de intelligence * 2 (dano máximo).
 // A mana consumida por turno é 15. Além disto a função deve ter uma condicional, caso o mago tenha menos de 15 de mana o valor de dano recebe uma mensagem (Ex: "Não possui mana suficiente") e a mana gasta é 0.
-const mageDMG = (dano, custo) => ({
-  dmg: dano(),
-  manaCost: custo(),
-});
+const mageDMG = magia => magia(); 
 
-const manaCost = () => {
-  if( mage.mana >= 15) {
-      return 15
-  } else {
-      return 0
-  };
-}
-
-const spellDmg = () => {
+const spell = () => {
   let damage;
+  let custoMana = 15;
   if( mage.mana >= 15) {
-    mage['mana'] -= 15;
+    mage['mana'] -= custoMana;
     damage = Math.floor(Math.random() * (mage.intelligence * 2 - mage.intelligence)) + mage.intelligence;
   } else {
     damage = 'Sem mana suficiente'
+    custoMana = 0;
   };
-  return damage
+  return {
+    dmg: damage,
+    manaCost: custoMana,
+  }
 }
 
-console.log(dragonDMG(), warriorDMG(), mageDMG(spellDmg, manaCost), mage.mana);
+console.log(dragonDMG(), warriorDMG(), mageDMG(spell), mage.mana);
