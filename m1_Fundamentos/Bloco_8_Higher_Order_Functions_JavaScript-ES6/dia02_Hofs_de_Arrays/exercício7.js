@@ -67,9 +67,9 @@ const expectedResult = false;
 
 function authorUnique(array) {
   // escreva seu código aqui
-  let busca = array.every((elementA) => !array.some((elementB) => (elementA !== elementB) && (elementA.author.birthYear === elementB.author.birthYear)));
+  let busca = array.some((elementA) => array.some((elementB) => (elementA !== elementB) && (elementA.author.birthYear === elementB.author.birthYear)));
   let isTrue;
-  busca === true ? isTrue = true : isTrue = false;
+  busca === false ? isTrue = true : isTrue = false;
   return isTrue;
 }
 
