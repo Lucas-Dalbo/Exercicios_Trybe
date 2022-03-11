@@ -63,3 +63,10 @@ const books = [
 
 // Adicione o código do exercício aqui:
 // 1 - Crie um array com strings no formato NOME_DO_LIVRO - GÊNERO_DO_LIVRO - NOME_DA_PESSOA_AUTORA
+
+function formatedBookNames(array) {
+  // escreva seu código aqui
+  return array.map((livros) => `${livros.name.toUpperCase().replace(/ /g,"_")} - ${livros.genre.toUpperCase().replace(/ /g,"_")} - ${livros.author.name.toUpperCase().replace(/ /g,"_")}`);
+}
+
+console.log(formatedBookNames(books));
