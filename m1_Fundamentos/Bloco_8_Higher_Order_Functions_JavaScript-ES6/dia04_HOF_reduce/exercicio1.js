@@ -6,11 +6,11 @@ const arrays = [
 ];
 
 function flatten(arr) {
-  return arr.reduce((acc, crr) => fusion = acc.concat(crr), []);
+  return arr.reduce((acc, crr) => acc.concat(crr), []);
 }
 
 flatten(arrays);
-// console.log(flatten(arrays));
+console.log(flatten(arrays));
 
 // let novaarray = arrays[0].concat(arrays[1], arrays[2]);
 // console.log(novaarray);
