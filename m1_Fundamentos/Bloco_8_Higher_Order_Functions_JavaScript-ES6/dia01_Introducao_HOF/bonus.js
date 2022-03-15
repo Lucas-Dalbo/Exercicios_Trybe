@@ -32,13 +32,11 @@ const warriorDMG = () => Math.floor(Math.random() * (warrior.weaponDmg * warrior
 // 3 - Crie uma função que retorna um objeto com duas chaves e dois valores contendo o dano e a mana gasta pelo mago em um turno.
 // O dano será um número aleatório entre o valor do atributo intelligence (dano mínimo) e o valor de intelligence * 2 (dano máximo).
 // A mana consumida por turno é 15. Além disto a função deve ter uma condicional, caso o mago tenha menos de 15 de mana o valor de dano recebe uma mensagem (Ex: "Não possui mana suficiente") e a mana gasta é 0.
-const mageDMG = magia => magia(); 
-
-const spell = () => {
+const mageDMG = () => {
   let damage;
   let custoMana = 15;
   if( mage.mana >= 15) {
-    mage['mana'] -= custoMana;
+    // mage['mana'] -= custoMana;
     damage = Math.floor(Math.random() * (mage.intelligence * 2 - mage.intelligence)) + mage.intelligence;
   } else {
     damage = 'Sem mana suficiente'
@@ -50,4 +48,37 @@ const spell = () => {
   }
 }
 
-console.log(dragonDMG(), warriorDMG(), mageDMG(spell), mage.mana);
+// console.log(dragonDMG(), warriorDMG(), mageDMG(spell));
+
+// PARTE 2
+const gameActions = {
+  warriorTurn: (action) => {
+    let dmg = action();
+    warrior.damage = dmg;
+    dragon.healthPoints -= dmg;
+    return dmg;
+  },
+  mageTurn: (action) => {
+    let dmg = action();
+    mage.damage = dmg.dmg;
+    mage.mana -= dmg.manaCost;
+    dragon.healthPoints -= dmg.dmg;
+    return dmg;
+  },
+  dragonTurn: (action) => {
+    let dmg = action();
+    dragon.damage = dmg
+    mage.healthPoints -= dmg;
+    warrior.healthPoints -= dmg;
+    return dmg;
+  },
+  turnResults: () => battleMembers,
+};
+
+gameActions.warriorTurn(warriorDMG),
+gameActions.mageTurn(mageDMG),
+gameActions.dragonTurn(dragonDMG),
+
+console.log(
+gameActions.turnResults(),
+)
