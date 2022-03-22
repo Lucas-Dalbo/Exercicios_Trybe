@@ -11,7 +11,8 @@ const fetchJoke = () => {
 
   fetch(API_URL, myObject)
     .then(resposta => resposta.json())
-    .then(data => jokeHtml.innerText = data.joke);
+    .then(data => jokeHtml.innerText = data.joke)
+    .catch(error => console.log(error));
 };
 
 window.onload = () => fetchJoke();
