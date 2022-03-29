@@ -15,3 +15,4 @@ describe('Testa a função hydrate', () => {
     expect(hydrate('4 caipirinhas e 2 cervejas')).toBe('6 copos de água');
   });
 });
+
