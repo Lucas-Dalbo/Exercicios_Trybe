@@ -27,8 +27,8 @@ class Content extends React.Component{
   render(){
     return(
       <div>
-        <ul>
-        {conteudos.map((map, id) => <li key={id}>
+        <ul className="list">
+        {conteudos.map((map, id) => <li key={id} className='list-item'>
           O conteúdo é: {map.conteudo} <br/>
           Status: {map.status}<br/>
           Bloco: {map.bloco}<br/>
