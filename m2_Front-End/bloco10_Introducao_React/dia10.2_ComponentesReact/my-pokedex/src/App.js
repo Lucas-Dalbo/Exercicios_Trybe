@@ -9,7 +9,7 @@ function App() {
         <h1 className='title'>POKEDEX</h1>
       </header>
       <div className='poke-container'>
-        <Pokemom pokeinfo= { data[0] }/>
+        {data.map((map) => <Pokemom pokeinfo= {map} key={map.id}/>)}
       </div>
     </main>
   );
