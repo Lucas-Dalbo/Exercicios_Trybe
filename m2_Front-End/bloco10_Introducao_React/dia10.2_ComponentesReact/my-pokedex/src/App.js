@@ -5,11 +5,11 @@ import Pokemom from './components/Pokemon';
 function App() {
   return (
     <main>
-      <header>
-        <h1>POKEDEX</h1>
+      <header className='header'>
+        <h1 className='title'>POKEDEX</h1>
       </header>
-      <div>
-        <Pokemom pokeinfo= { data }/>
+      <div className='poke-container'>
+        <Pokemom pokeinfo= { data[0] }/>
       </div>
     </main>
   );

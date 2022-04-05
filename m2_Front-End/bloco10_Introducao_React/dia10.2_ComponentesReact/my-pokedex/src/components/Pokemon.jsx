@@ -1,17 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
+import './Pokemon.css';
 
-class Pokemom extends Component {
+class Pokemom extends React.Component {
   render(){
-    const { name, type, averageWeight, image } = this.props;
-
+    const { name, type, averageWeight, image } = this.props.pokeinfo;
     return(
-      <div>
-        <div>
+      <div className="pokemon">
+        <div className="poke-data">
           <p>{name}</p>
           <p>Type: {type}</p>
           <p>Average weight: {averageWeight.value} {averageWeight.measurementUnit}</p>
         </div>
-        <img src={image} alt="Pokemon" />
+        <img src={image} alt="Pokemon" className="poke-img" />
       </div>
     );
   }

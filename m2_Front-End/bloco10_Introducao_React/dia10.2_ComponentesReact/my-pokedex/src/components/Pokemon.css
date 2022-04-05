@@ -1,0 +1,22 @@
+.pokemon {
+  display: flex;
+  border: solid rgba(128, 128, 128, 0.5) 2px;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.poke-data {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.poke-data p {
+  margin: 8px 0;
+}
+
+.poke-img {
+  width: auto;
+  height: auto;
+}
