@@ -1,0 +1,19 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  color: yellow;
+  background-color: blue;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.poke-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}

@@ -1,0 +1,28 @@
+.pokemon {
+  display: flex;
+  border: solid rgba(128, 128, 128, 0.5) 2px;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 5px 10px;
+  flex-grow: 1;
+}
+
+.poke-data {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin: 0 10px;
+  flex-grow: 1;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.poke-data p {
+  margin: 5px 0;
+}
+
+.poke-img {
+  width: auto;
+  height: auto;
+  margin: 5px 0;
+}
