@@ -70,7 +70,7 @@ class Forms extends React.Component {
   }
 
   btnHandler(e) {
-    // e.preventDefault();
+    e.preventDefault();
     let btn = this.state.btnClick;
     if(btn === false) {
       this.setState({
