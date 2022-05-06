@@ -1,0 +1,46 @@
+.container {
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 10px;
+  width: 50%;
+}
+
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.cidadeEstado {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.cidadeEstado label select {
+  width: 100%;
+  padding: 5px;
+}
+
+.text-container {
+  width: 80%;
+  margin: 10px;
+}
+
+.text-container textarea {
+  height: 100px;
+  padding: 5px;
+  resize: none;
+  width: 100%;
+}
+
+.text-container:nth-child(2n) textarea {
+  height: 20px;
+}
+
+.radio {
+  padding: 5px;
+}
