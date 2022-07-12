@@ -1,0 +1,7 @@
+version: '3'
+services:
+  web:
+    build: ./my-app/
+    restart: always
+    ports:
+      - 8080:80
