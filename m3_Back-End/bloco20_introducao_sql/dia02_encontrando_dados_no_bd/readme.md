@@ -1,6 +1,6 @@
 ## Instruções
 
-### Exercício 1.
+### Exercício 1
  - Escreva uma query para exibir a string "This is SQL Exercise, Practice and Solution".
  - Escreva uma query para exibir três números em três colunas.
  - Escreva uma query para exibir a soma dos números 10 e 15.
@@ -16,3 +16,11 @@
  - Escreva uma query para exibir o nome do segundo projeto com menor quantidade de horas.
  - Escreva uma query para exibir todas as informações dos cinco projetos com a menor quantidade de horas.
  - Escreva uma query que exiba a string "Existem Number cientistas na tabela Scientists.", em que Number se refira a quantidade de cientistas.
+
+---
+### Exercício 2
+ - Escreva uma query para exibir a peça e o preço de tudo que é provido pela empresa RBT.
+ - Escreve uma query para exibir todas as informações das cinco peças com os maiores preços.
+ - Escreva uma query para exibir o nome das empresas e preço das peças com os quatro maiores preços, começando a lista a partir do 3º item.
+ - Escreva uma query para exibir todas as informações das peças que são providas pela empresa HAL. Ordene o resultado pelos preços das peças de forma decrescente.
+ - Escreva uma query para exibir por quantas empresas a peça 1 é provida.
