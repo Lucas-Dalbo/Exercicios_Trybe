@@ -21,3 +21,5 @@ const sorteio = () => {
 }
 
 sorteio();
+
+module.exports = sorteio;
