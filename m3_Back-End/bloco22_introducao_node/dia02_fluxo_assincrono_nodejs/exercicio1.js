@@ -13,17 +13,4 @@ function somaMultiplica (numb1, numb2, numb3) {
   });
 }
 
-// Erro 1:
-somaMultiplica(13, 'a', 2)
-  .then(resultado => console.log('Sucesso: ' , resultado))
-  .catch(e => console.log('Erro: ' , e.message));
-
-// Erro 2:
-somaMultiplica(13, 10, 2)
-  .then(resultado => console.log('Sucesso: ' , resultado))
-  .catch(e => console.log('Erro: ' , e.message));
-
-// Sucesso:
-somaMultiplica(13, 20, 2)
-  .then(resultado => console.log('Sucesso: ' , resultado))
-  .catch(e => console.log('Erro: ' , e.message));
+module.exports = somaMultiplica;
