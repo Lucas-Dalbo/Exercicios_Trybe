@@ -12,6 +12,10 @@ const retorno = (imc) => {
   if (40 <= imc) return tabela.caso6[1];
 }
 
+const exibirTabela = (key) => {
+  if (key === 's') console.table(tabela);
+}
+
 function main () {
   const altura = readline.questionFloat('Qual a sua altura em metros? ');
   const peso = readline.questionFloat('Qual o seu peso em Kg? ');
@@ -19,6 +23,9 @@ function main () {
   const resultado = calculoIMC(peso, altura);
   const diagnostico = retorno(resultado);
   console.log(`Seu IMC é ${resultado} e seu resultado é: ${diagnostico}`);
+
+  const exibirTabelaKey = readline.question('Deseja ver a tabela IMC? (s/n) ');
+  exibirTabela(exibirTabelaKey);
 }
 
 main();
