@@ -1,12 +1,9 @@
-const fs = require('fs').promises;
+const callSimpsons = require('./simpsonCall');
 
 const infoPersonagem = async (parametroId) => {
-  const personagens = 'simpsons.json';
   try {
-    const resultado = await fs.readFile(personagens, 'utf-8');
-    const listaPersonagens = JSON.parse(resultado);
-
-    const busca = listaPersonagens.filter(({ id }) => Number(id) === parametroId);
+    const personagens = await callSimpsons();
+    const busca = personagens.filter(({ id }) => Number(id) === parametroId);
     if(busca.length === 0) throw {msg: 'id não encontrado', code: 000}
 
     return console.log(busca);

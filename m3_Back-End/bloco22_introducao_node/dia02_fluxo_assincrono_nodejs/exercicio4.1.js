@@ -1,18 +1,11 @@
-const fs = require('fs').promises;
+const callSimpsons = require('./simpsonCall');
 
 const listagemPersonagens = async () => {
-  const personagens = 'simpsons.json';
-  try {
-    const resultado = await fs.readFile(personagens, 'utf-8');
-    const listaPersonagens = JSON.parse(resultado);
+  const personagens = await callSimpsons();
 
-    listaPersonagens.forEach(({ id, name }) => {
-      console.log(`${id} - ${name}`);
-    });
-    
-  } catch (error) {
-    console.log(error);
-  };
+  personagens.forEach(({ id, name }) => {
+    console.log(`${id} - ${name}`);
+  });
 };
 
 listagemPersonagens();
