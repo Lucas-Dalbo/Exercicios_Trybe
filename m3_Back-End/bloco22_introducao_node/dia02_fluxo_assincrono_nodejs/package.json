@@ -1,0 +1,14 @@
+{
+  "name": "dia02_fluxo_assincrono_nodejs",
+  "version": "1.0.0",
+  "description": "Exercicios",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Dalbo",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
