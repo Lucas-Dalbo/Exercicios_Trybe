@@ -8,9 +8,9 @@ const executarScript = (script) => {
 const selecionarScript = () => {
   console.table(listaScripts);
 
-  const scriptEscolhido = readline.questionInt('Qual o indice do script que deseja executar? ');
-  console.log(`Executando ${scripts[scriptEscolhido]}!`);
-  return executarScript(`${scripts[scriptEscolhido]}`);
+  const scriptEscolhido = readline.questionInt('Qual o index do script que deseja executar? ');
+  console.log(`Executando ${listaScripts[scriptEscolhido]}:`);
+  return executarScript(`${listaScripts[scriptEscolhido]}`);
 }
 
 selecionarScript();

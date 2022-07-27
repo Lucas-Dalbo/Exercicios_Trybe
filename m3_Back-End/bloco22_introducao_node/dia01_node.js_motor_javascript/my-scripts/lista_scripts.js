@@ -1,3 +1,3 @@
-const scripts = ['imc', 'velocidade', 'sorteio'];
+const scripts = ['imc', 'velocidade', 'sorteio', 'fatorial'];
 
 module.exports = scripts;
