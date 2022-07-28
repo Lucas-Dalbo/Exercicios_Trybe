@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 const callSimpsons = require('./simpsonCall');
 
 const familiaSimpson = async () => {
-  const personagens = await callSimpsons();
+  const personagens = await callSimpsons('simpsons.json');
 
   const simpsonFam = personagens
     .filter(({ id }) => ['1', '2', '3', '4'].includes(id));

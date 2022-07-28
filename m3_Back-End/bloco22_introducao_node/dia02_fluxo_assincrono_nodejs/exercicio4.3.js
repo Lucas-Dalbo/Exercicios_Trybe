@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 const callSimpsons = require('./simpsonCall');
 
 const retirando10e6 = async () => {
-  const personagens = await callSimpsons();
+  const personagens = await callSimpsons('simpsons.json');
 
   const busca = personagens
     .filter(({ id }) => id !== '6' && id !== '10');

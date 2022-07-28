@@ -2,7 +2,7 @@ const callSimpsons = require('./simpsonCall');
 
 const infoPersonagem = async (parametroId) => {
   try {
-    const personagens = await callSimpsons();
+    const personagens = await callSimpsons('simpsons.json');
     const busca = personagens.filter(({ id }) => Number(id) === parametroId);
     if(busca.length === 0) throw {msg: 'id não encontrado', code: 000}
 
