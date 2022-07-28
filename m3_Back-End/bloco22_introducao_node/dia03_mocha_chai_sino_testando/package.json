@@ -1,0 +1,16 @@
+{
+  "name": "dia03_mocha_chai_sino_testando",
+  "version": "1.0.0",
+  "description": "Exercicios do dia",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha testes"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "sinon": "^14.0.0"
+  }
+}
