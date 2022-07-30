@@ -1,5 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const generateToken = require('./tokenGenerator');
+
+const TOKENS = [ '3f231452234660d7' ];
 
 const app = express();
 app.use(bodyParser.json());
@@ -34,6 +37,37 @@ app.put('/users/:name/:age', (req, res) => {
 
   res.status(200)
     .json({ message: `Seu nome é ${name} e você tem ${age} anos de idade` });
+});
+
+app.get('/vips', (req, res) => {
+  const token = req.headers.authorization;
+  const isTokenValid = TOKENS.find((keys) => keys === token);
+  if(!token || token.length !== 16 || !isTokenValid) {
+    return res.status(401).json({ message: 'Token inválido!' });
+  }
+
+  res.status(200).json({ message: 'Bem vindo a área VIP!'})
+});
+
+app.post('/singup', (req, res) => {
+  const { email, password, firstName, phone } = req.body;
+
+  if ( !email || !password || !firstName || !phone) {
+    return res.status(401).json({ message: 'missing fields' });
+  };
+  
+  if (
+    email.length === 0
+    || password.length === 0
+    || firstName.length === 0
+    || phone.length === 0
+  ) return res.status(401).json({ message: 'missing fields' });
+  
+
+  const token = generateToken();
+  TOKENS.push(token);
+
+  res.status(200).json({ token });
 });
 
 app.all('*', (req, res) => {
