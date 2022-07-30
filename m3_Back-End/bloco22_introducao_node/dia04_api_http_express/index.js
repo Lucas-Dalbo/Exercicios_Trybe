@@ -28,3 +28,15 @@ app.post('/greetings', (req, res) => {
   if(age > 17) return res.status(200).json({ message: `Hello, ${name}!` });
   if(age < 17) return res.status(401).json({ message: 'Unauthorized' });
 });
+
+app.put('/users/:name/:age', (req, res) => {
+  const { name, age } = req.params;
+
+  res.status(200)
+    .json({ message: `Seu nome é ${name} e você tem ${age} anos de idade` });
+});
+
+app.all('*', (req, res) => {
+  const { path } = req
+  res.status(404).json({ erro: `Rota ${path} não existe!` })
+});
