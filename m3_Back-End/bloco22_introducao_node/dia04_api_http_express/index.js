@@ -9,5 +9,11 @@ app.listen(3001, () => {
 });
 
 app.get('/ping', (_req, res) => {
-  res.status(200).json({ message: 'pong' });
+  return res.status(200).json({ message: 'pong' });
+});
+
+app.post('/hello', (req, res) => {
+  const { name } = req.body;
+  if(!name) return res.status(400).send({ erro: 'name não informado' });
+  return res.status(200).json({ message: `Hello, ${name}!`});
 });
