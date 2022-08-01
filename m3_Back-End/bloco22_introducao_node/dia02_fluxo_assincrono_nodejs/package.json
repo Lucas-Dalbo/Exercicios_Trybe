@@ -9,6 +9,7 @@
   "author": "Lucas Dalbo",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "readline-sync": "^1.4.10"
   }
 }
