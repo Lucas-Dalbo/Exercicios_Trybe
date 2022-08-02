@@ -1,6 +1,3 @@
-const isValidDate = require('pretty-easy-date-check');
-/* https://www.npmjs.com/package/pretty-easy-date-check */
-
 const nameMidd = (req, res, next) => {
   const { productName } = req.body;
   if (!productName) throw { message: 'O campo productName é obrigatório', cod: 400 };
@@ -18,7 +15,9 @@ const infoMidd = (req, res, next) => {
   const { saleDate, warrantyPeriod } = infos;
   if (!saleDate) throw { message: 'O campo saleDate é obrigatorio', cod: 400 };
 
-  if (!isValidDate(saleDate)) throw { message: 'O campo saleDate não é uma data válida', cod: 400 };
+  const validDate = /^\d{2}\/\d{2}\/\d{4}$/;
+  /* https://bobbyhadz.com/blog/javascript-date-validation-dd-mm-yyyy */
+  if (!saleDate.match(validDate)) throw { message: 'O campo saleDate não é uma data válida', cod: 400 };
 
   if (!warrantyPeriod) throw { message: 'O campo warrantyPeriod é obrigatório', cod: 400 };
 
