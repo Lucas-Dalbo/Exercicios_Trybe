@@ -1,4 +1,6 @@
-const nameMidd = (req, res, next) => {
+const TOKENS = require('../tokens');
+
+const nameMidd = (req, _res, next) => {
   const { productName } = req.body;
   if (!productName) throw { message: 'O campo productName é obrigatório', cod: 400 };
 
@@ -7,11 +9,10 @@ const nameMidd = (req, res, next) => {
   next();
 }
 
-const infoMidd = (req, res, next) => {
+const infoMidd = (req, _res, next) => {
   const { infos } = req.body;
   if (!infos) throw { message: 'O campo infos é obrigatorio', cod: 400 };
 
-  console.log(infos);
   const { saleDate, warrantyPeriod } = infos;
   if (!saleDate) throw { message: 'O campo saleDate é obrigatorio', cod: 400 };
 
@@ -26,6 +27,36 @@ const infoMidd = (req, res, next) => {
   next();
 }
 
+const userInfoMidd = (req, _res, next) => {
+  const { email, password, firstName, phone } = req.body;
+
+  if ( !email || !password || !firstName || !phone) {
+    throw { message: 'missing fields', cod: 400 };
+  };
+  
+  if (
+    email.length === 0
+    || password.length === 0
+    || firstName.length === 0
+    || phone.length === 0
+  ) throw { message: 'missing fields', cod: 400 };
+
+  next();
+}
+
+const tokenMidd = (req, _res, next) => {
+  const token = req.headers.authorization;
+  const isTokenValid = TOKENS.find((keys) => keys === token);
+
+  if (
+    !token
+    || token.length !== 16
+    || !isTokenValid
+  ) throw { message: 'Token inválido', cod: 401 };
+
+  next();
+}
+
 const errorMidd = (err, _req, res, _next) => {
   const { message, cod } = err;
   res.status(cod).json({ message });
@@ -34,5 +65,7 @@ const errorMidd = (err, _req, res, _next) => {
 module.exports = {
   nameMidd,
   infoMidd,
+  userInfoMidd,
+  tokenMidd,
   errorMidd
 }
