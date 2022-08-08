@@ -26,4 +26,14 @@ router.get('/:id', async (req, res) => {
   return res.status(200).json(user);
 });
 
+router.put('/:id', middleware.postUserMidd, async (req, res) => {
+  const { id } = req.params;
+  const { firstName, lastName, email, password } = req.body;
+  const result = await User.updateUser(id, { firstName, lastName, email, password });
+
+  if (!result) return res.status(404).json({ message: 'User Not found' });
+
+  return res.status(200).json(result);
+});
+
 module.exports = router;

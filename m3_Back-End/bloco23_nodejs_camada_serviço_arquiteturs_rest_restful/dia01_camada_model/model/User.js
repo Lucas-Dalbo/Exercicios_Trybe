@@ -8,9 +8,7 @@ const serializeUser = (obj) => ({
   password: obj.user_password,
 });
 
-const addUser = async (
-  { firstName, lastName, email, password },
-  ) => {
+const addUser = async ({ firstName, lastName, email, password }) => {
   const [result] = await connection.execute(
     'INSERT INTO users (first_name, last_name, user_email, user_password) VALUES (?,?,?,?);',
     [firstName, lastName, email, password],
@@ -21,7 +19,6 @@ const addUser = async (
     firstName,
     lastName,
     email,
-    password,
   };
 };
 
@@ -39,8 +36,25 @@ const getUserById = async (id) => {
   return user.map(serializeUser)[0];
 };
 
+const updateUser = async (id, { firstName, lastName, email, password }) => {
+  const [result] = await connection.execute(
+    'UPDATE users SET first_name=?, last_name=?, user_email=?, user_password=? WHERE user_id=?;',
+    [firstName, lastName, email, password, id],
+  );
+  
+  if (!result.affectedRows) return null;
+
+  return {
+    id,
+    firstName,
+    lastName,
+    email,
+  };
+};
+
 module.exports = {
   addUser,
   getAllUsers,
   getUserById,
+  updateUser,
 };
