@@ -10,4 +10,9 @@ router.post('/', middleware.postUserMidd, async (req, res) => {
   res.status(201).json(newUser);
 });
 
+router.get('/', async (_req, res) => {
+  const users = await User.getAllUsers();
+  res.status(200).json(users);
+});
+
 module.exports = router;
