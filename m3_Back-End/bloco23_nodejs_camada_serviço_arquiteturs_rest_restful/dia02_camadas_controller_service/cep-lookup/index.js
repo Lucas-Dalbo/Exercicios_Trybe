@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
-const errorMiddleware = require('./middlewares/error');
+const { errorMiddleware } = require('./middlewares/error');
 const cepRoute = require('./routes/cepRoute');
 
 const app = express();

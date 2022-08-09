@@ -8,4 +8,13 @@ const getCEP = async (cep) => {
   return result;
 };
 
-module.exports = { getCEP };
+const createCep = async ({ cepAjustado, logradouro, bairro, localidade, uf }) => {
+  const [result] = await connection.execute(
+    'INSERT INTO ceps (cep, logradouro, bairro, localidade, uf) VALUE (?,?,?,?,?);',
+    [cepAjustado, logradouro, bairro, localidade, uf],
+  );
+
+  return result;
+};
+
+module.exports = { getCEP, createCep };

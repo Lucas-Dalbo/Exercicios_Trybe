@@ -1,11 +1,11 @@
 const cepModel = require('../models/cepModel');
+const { errorFormat } = require('../middlewares/error');
 
 const ajusteCEP = (cep) => cep.replace(/-/, '');
 
 const insertTraco = (cep) => {
   const part1 = cep.slice(0, 5);
   const part2 = cep.slice(5);
-
   return `${part1}-${part2}`;
 };
 
@@ -24,4 +24,23 @@ const getCEP = async (cep) => {
   };
 };
 
-module.exports = { getCEP };
+const createCep = async ({ cep, logradouro, bairro, localidade, uf }) => {
+  const cepAjustado = ajusteCEP(cep);
+  const result = await cepModel.getCEP(cepAjustado);
+  if (result.length) return errorFormat('alreadyExists', 'CEP já existente', 409);
+
+  const novoCEP = await cepModel
+    .createCep({ cepAjustado, logradouro, bairro, localidade, uf });
+  
+  if (!novoCEP.affectedRows) return ('internalError', 'CEP não foi criado', 500);
+
+  return {
+    cep: insertTraco(cepAjustado),
+    logradouro,
+    bairro,
+    localidade,
+    uf,
+  };
+};
+
+module.exports = { getCEP, createCep };

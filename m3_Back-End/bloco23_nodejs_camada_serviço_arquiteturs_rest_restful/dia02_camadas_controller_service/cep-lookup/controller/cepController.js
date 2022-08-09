@@ -13,4 +13,14 @@ const getCEP = async (req, res) => {
   return res.status(200).json(cepFound);
 };
 
-module.exports = { getCEP };
+const createCep = async (req, res, next) => {
+  const { cep, logradouro, bairro, localidade, uf } = req.body;
+
+  const newCEP = await cepServices.createCep({ cep, logradouro, bairro, localidade, uf });
+
+  if (newCEP.code === 409) return next(newCEP);
+
+  res.status(201).json(newCEP);
+};
+
+module.exports = { getCEP, createCep };
