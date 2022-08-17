@@ -1,4 +1,5 @@
 const cepModel = require('../models/cepModel');
+const cepAPIModel = require('../models/cepAPIModel');
 const { errorFormat } = require('../middlewares/error');
 
 const ajusteCEP = (cep) => cep.replace(/-/, '');
@@ -9,10 +10,21 @@ const insertTraco = (cep) => {
   return `${part1}-${part2}`;
 };
 
+const searchCep = async (cepAjustado) => {
+  const cepFound = await cepAPIModel.getCEP(cepAjustado);
+  if (cepFound.erro) return false;
+
+  const { cep, logradouro, bairro, localidade, uf } = cepFound;
+  await cepModel.createCep({ cepAjustado, logradouro, bairro, localidade, uf });
+
+  return { cep, logradouro, bairro, localidade, uf };
+};
+
 const getCEP = async (cep) => {
   const newCEP = ajusteCEP(cep);
   const result = await cepModel.getCEP(newCEP);
-  if (!result.length) return false;
+  
+  if (!result.length) return searchCep(cep);
 
   const { logradouro, bairro, localidade, uf } = result[0];
   return {
