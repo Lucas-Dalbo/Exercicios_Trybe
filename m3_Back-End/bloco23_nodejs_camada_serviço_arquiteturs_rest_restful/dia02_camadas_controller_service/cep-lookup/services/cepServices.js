@@ -1,5 +1,6 @@
 const cepModel = require('../models/cepModel');
 const cepAPIModel = require('../models/cepAPIModel');
+const bairroModel = require('../models/bairroModel');
 const { errorFormat } = require('../middlewares/error');
 
 const ajusteCEP = (cep) => cep.replace(/-/, '');
@@ -12,10 +13,14 @@ const insertTraco = (cep) => {
 
 const searchCep = async (cepAjustado) => {
   const cepFound = await cepAPIModel.getCEP(cepAjustado);
+
   if (cepFound.erro) return false;
 
   const { cep, logradouro, bairro, localidade, uf } = cepFound;
-  await cepModel.createCep({ cepAjustado, logradouro, bairro, localidade, uf });
+
+  const bairroId = await bairroModel.createBairro({ bairro, localidade, uf });
+
+  await cepModel.createCep({ cepAjustado, logradouro }, bairroId);
 
   return { cep, logradouro, bairro, localidade, uf };
 };
@@ -39,13 +44,13 @@ const getCEP = async (cep) => {
 const createCep = async ({ cep, logradouro, bairro, localidade, uf }) => {
   const cepAjustado = ajusteCEP(cep);
   const result = await cepModel.getCEP(cepAjustado);
+
   if (result.length) return errorFormat('alreadyExists', 'CEP já existente', 409);
 
-  const novoCEP = await cepModel
-    .createCep({ cepAjustado, logradouro, bairro, localidade, uf });
-  
-  if (!novoCEP.affectedRows) return ('internalError', 'CEP não foi criado', 500);
+  const bairroId = await bairroModel.createBairro({ bairro, localidade, uf });
 
+  await cepModel.createCep({ cepAjustado, logradouro }, bairroId);
+  
   return {
     cep: insertTraco(cepAjustado),
     logradouro,

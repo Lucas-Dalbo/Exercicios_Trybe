@@ -8,10 +8,10 @@ const getCEP = async (cep) => {
   return result;
 };
 
-const createCep = async ({ cepAjustado, logradouro, bairro, localidade, uf }) => {
+const createCep = async ({ cepAjustado, logradouro }, bairroId) => {
   const [result] = await connection.execute(
-    'INSERT INTO ceps (cep, logradouro, bairro, localidade, uf) VALUE (?,?,?,?,?);',
-    [cepAjustado, logradouro, bairro, localidade, uf],
+    'INSERT INTO ceps (cep, logradouro, bairro_id) VALUE (?,?,?);',
+    [cepAjustado, logradouro, bairroId],
   );
 
   return result;
