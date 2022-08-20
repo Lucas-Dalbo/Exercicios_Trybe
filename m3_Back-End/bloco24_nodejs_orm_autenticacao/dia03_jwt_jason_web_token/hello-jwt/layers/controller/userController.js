@@ -25,4 +25,10 @@ const userGet = (req, res) => {
   res.status(200).json({ username, admin });
 }
 
-module.exports = { userLogin, userGet }
+const topSecret = (_req, res) => {
+  const info = { secretInfo: 'Peter Parker é o Homem-Arannha' };
+
+  res.status(200).json(info);
+};
+
+module.exports = { userLogin, userGet, topSecret }

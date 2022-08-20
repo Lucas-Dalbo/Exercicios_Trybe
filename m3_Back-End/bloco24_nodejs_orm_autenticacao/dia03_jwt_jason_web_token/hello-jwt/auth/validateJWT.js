@@ -11,7 +11,7 @@ const tokenValidation = (req, res, next) => {
   try {
     const decoded = jwt.verify(token, SECRET);
     req.data = decoded.data;
-    
+
     next();
   } catch (error) {
     throw new CustomError(401, error.message );

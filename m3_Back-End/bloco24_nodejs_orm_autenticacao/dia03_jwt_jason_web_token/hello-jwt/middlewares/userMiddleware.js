@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const CustomError = require('../CustomError');
 
 const userLogin = (req, res, next) => {
   const { username, password } = req.body;
@@ -13,4 +14,12 @@ const userLogin = (req, res, next) => {
   next();
 };
 
-module.exports = { userLogin };
+const isAdmin = (req, _res, next) => {
+  const { admin } = req.data;
+
+  if (!admin) throw new CustomError(403, 'Restricted access');
+
+  next();
+}
+
+module.exports = { userLogin, isAdmin };

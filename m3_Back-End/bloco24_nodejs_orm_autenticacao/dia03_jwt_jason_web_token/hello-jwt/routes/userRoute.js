@@ -11,6 +11,10 @@ userRoute.get('/teste', (_req, res) => {
 });
 
 userRoute.post('/login', userMiddleware.userLogin, userController.userLogin);
-userRoute.get('/users/me', tokenValidation, userController.userGet);
+
+userRoute.use(tokenValidation);
+
+userRoute.get('/users/me', userController.userGet);
+userRoute.get('/top-secret', userMiddleware.isAdmin, userController.topSecret);
 
 module.exports = userRoute;
