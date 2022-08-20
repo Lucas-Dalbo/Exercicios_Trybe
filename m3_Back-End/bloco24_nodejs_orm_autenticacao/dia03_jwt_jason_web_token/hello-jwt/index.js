@@ -10,7 +10,6 @@ app.use(express.json());
 
 app.use('/', userRoute);
 
-
 app.use(errorMiddleware);
 
 const { PORT } = process.env;

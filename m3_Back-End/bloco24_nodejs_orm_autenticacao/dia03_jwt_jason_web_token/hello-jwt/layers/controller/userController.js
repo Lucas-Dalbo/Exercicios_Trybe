@@ -19,4 +19,10 @@ const userLogin = (req, res) => {
   res.status(200).json({ token });
 };
 
-module.exports = { userLogin }
+const userGet = (req, res) => {
+  const { username, admin } = req.data;
+
+  res.status(200).json({ username, admin });
+}
+
+module.exports = { userLogin, userGet }
