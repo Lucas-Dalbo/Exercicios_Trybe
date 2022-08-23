@@ -1,8 +1,9 @@
 const bookService = require('../services/bookService');
 
-const getAll = async (_req, res) => {
+const getAll = async (req, res) => {
+  const { q } = req.query;
   try {
-    const books = await bookService.getAll();
+    const books = q ? await bookService.getByAuthor(q) : await bookService.getAll();
     return res.status(200).json(books);
   } catch (error) {
     console.log(error);
@@ -51,4 +52,18 @@ const update = async (req, res) => {
   };
 };
 
-module.exports = { getAll, findById, create, update };
+const remove = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const book = await bookService.remove(id);
+
+    if(!book) return res.status(404).json({ message: 'Book not found' });
+
+    return res.status(204).json({ message: 'Book deleted!' });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: error.message });
+  };
+};
+
+module.exports = { getAll, findById, create, update, remove };
