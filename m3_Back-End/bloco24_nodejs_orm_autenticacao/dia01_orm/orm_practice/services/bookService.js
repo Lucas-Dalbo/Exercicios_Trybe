@@ -5,4 +5,10 @@ const getAll = async () => {
   return books;
 };
 
-module.exports = { getAll };
+const findById = async (id) => {
+  const book = await model.Book.findByPk(id,
+    { attributes: ['id', 'title', 'author', 'pageQuantity'] });
+  return book;
+};
+
+module.exports = { getAll, findById };
