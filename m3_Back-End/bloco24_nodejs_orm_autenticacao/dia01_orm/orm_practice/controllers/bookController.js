@@ -36,4 +36,19 @@ const create = async (req, res) => {
   };
 };
 
-module.exports = { getAll, findById, create };
+const update = async (req, res) => {
+  const { id } = req.params;
+  const  { title, author, pageQuantity } = req.body;
+  try {
+    const [updatedBook] = await bookService.update(id, { title, author, pageQuantity });
+
+    if(!updatedBook) return res.status(404).json({ message: 'Book not found' });
+
+    return res.status(200).json({ message: 'Book updated!' });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: error.message });
+  };
+};
+
+module.exports = { getAll, findById, create, update };
