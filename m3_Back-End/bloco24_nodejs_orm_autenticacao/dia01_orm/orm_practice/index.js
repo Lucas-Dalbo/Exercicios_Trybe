@@ -8,6 +8,7 @@ app.use(express.json());
 
 app.get('/books', bookController.getAll);
 app.get('/books/:id', bookController.findById);
+app.post('/books', bookController.create);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`On na porta ${PORT}`));
