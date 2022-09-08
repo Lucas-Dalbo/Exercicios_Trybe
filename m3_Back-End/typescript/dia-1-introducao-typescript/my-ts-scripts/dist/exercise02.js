@@ -1,0 +1,28 @@
+"use strict";
+var MesesAno;
+(function (MesesAno) {
+    MesesAno[MesesAno["Janeiro"] = 1] = "Janeiro";
+    MesesAno[MesesAno["Fevereiro"] = 2] = "Fevereiro";
+    MesesAno[MesesAno["Mar\u00E7o"] = 3] = "Mar\u00E7o";
+    MesesAno[MesesAno["Abril"] = 4] = "Abril";
+    MesesAno[MesesAno["Maio"] = 5] = "Maio";
+    MesesAno[MesesAno["Junho"] = 6] = "Junho";
+    MesesAno[MesesAno["Julho"] = 7] = "Julho";
+    MesesAno[MesesAno["Agosto"] = 8] = "Agosto";
+    MesesAno[MesesAno["Setembro"] = 9] = "Setembro";
+    MesesAno[MesesAno["Outubro"] = 10] = "Outubro";
+    MesesAno[MesesAno["Novembro"] = 11] = "Novembro";
+    MesesAno[MesesAno["Dezembro"] = 12] = "Dezembro";
+})(MesesAno || (MesesAno = {}));
+console.log(MesesAno.Janeiro, MesesAno[1]);
+console.log(MesesAno.Fevereiro, MesesAno[2]);
+console.log(MesesAno.Março, MesesAno[3]);
+console.log(MesesAno.Janeiro, MesesAno[4]);
+console.log(MesesAno.Abril, MesesAno[5]);
+console.log(MesesAno.Junho, MesesAno[6]);
+console.log(MesesAno.Julho, MesesAno[7]);
+console.log(MesesAno.Agosto, MesesAno[8]);
+console.log(MesesAno.Setembro, MesesAno[9]);
+console.log(MesesAno.Outubro, MesesAno[10]);
+console.log(MesesAno.Novembro, MesesAno[11]);
+console.log(MesesAno.Dezembro, MesesAno[12]);
