@@ -1,11 +1,13 @@
 enum Estacoes {
-  Outono = 1,
-  Inverno,
-  Primavera,
-  Verão,
+  Outono = 'Outono',
+  Inverno = 'Inverno',
+  Primavera = 'Primavera',
+  Verao = 'Verao',
 }
 
-console.log(Estacoes[1], Estacoes['Outono']);
-console.log(Estacoes[2], Estacoes['Inverno']);
-console.log(Estacoes[3], Estacoes['Primavera']);
-console.log(Estacoes[4], Estacoes['Verão']);
+// console.log(Estacoes['Outono']);
+// console.log(Estacoes['Inverno']);
+// console.log(Estacoes['Primavera']);
+// console.log(Estacoes['Verao']);
+
+export default Estacoes

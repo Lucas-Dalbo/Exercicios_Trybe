@@ -1,27 +1,29 @@
 enum MesesAno {
-  Janeiro = 1,
-  Fevereiro,
-  Março,
-  Abril,
-  Maio,
-  Junho,
-  Julho,
-  Agosto,
-  Setembro,
-  Outubro,
-  Novembro,
-  Dezembro,
+  Janeiro = 'Janeiro',
+  Fevereiro = 'Fevereiro',
+  Março = 'Março',
+  Abril = 'Abril',
+  Maio = 'Maio',
+  Junho = 'Junho',
+  Julho = 'Julho',
+  Agosto = 'Agosto',
+  Setembro = 'Setembro',
+  Outubro = 'Outubro',
+  Novembro = 'Novembro',
+  Dezembro = 'Dezembro',
 }
 
-console.log(MesesAno.Janeiro, MesesAno[1]);
-console.log(MesesAno.Fevereiro, MesesAno[2]);
-console.log(MesesAno.Março, MesesAno[3]);
-console.log(MesesAno.Janeiro, MesesAno[4]);
-console.log(MesesAno.Abril, MesesAno[5]);
-console.log(MesesAno.Junho, MesesAno[6]);
-console.log(MesesAno.Julho, MesesAno[7]);
-console.log(MesesAno.Agosto, MesesAno[8]);
-console.log(MesesAno.Setembro, MesesAno[9]);
-console.log(MesesAno.Outubro, MesesAno[10]);
-console.log(MesesAno.Novembro, MesesAno[11]);
-console.log(MesesAno.Dezembro, MesesAno[12]);
+// console.log(MesesAno.Janeiro);
+// console.log(MesesAno.Fevereiro);
+// console.log(MesesAno.Março);
+// console.log(MesesAno.Janeiro);
+// console.log(MesesAno.Abril);
+// console.log(MesesAno.Junho);
+// console.log(MesesAno.Julho);
+// console.log(MesesAno.Agosto);
+// console.log(MesesAno.Setembro);
+// console.log(MesesAno.Outubro]);
+// console.log(MesesAno.Novembro]);
+// console.log(MesesAno.Dezembro]);
+
+export default MesesAno
