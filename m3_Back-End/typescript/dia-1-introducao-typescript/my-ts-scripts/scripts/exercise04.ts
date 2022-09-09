@@ -20,20 +20,26 @@ let estacoesHemisferio = {
 const mesesNomes = Object.values(MesesAno);
 const hemisferios = Object.keys(estacoesHemisferio);
 
-function script (): void {
-  const choseMes = readlineSync.keyInSelect(mesesNomes, 'Escolha um mês') + 1;
-  const choseHem = readlineSync.keyInSelect(hemisferios, 'Escolha um hemisfério');
-  const hemisferio = Object.values(estacoesHemisferio)[choseHem];
 
+
+function script (): void {
+  const choseMes = readlineSync.keyInSelect(mesesNomes, 'Escolha um mês');
+  const choseHem = readlineSync.keyInSelect(hemisferios, 'Escolha um hemisfério');
+  if(choseHem < 0 || choseHem < 0) return;
+
+  const hemisferio = Object.values(estacoesHemisferio)[choseHem];
   const result: string[] = []
   Object.entries(hemisferio).forEach((entries) => {
     const estacao = entries[0];
     const meses = entries[1];
 
-    if (meses.includes(choseMes)) result.push(estacao);
+    if (meses.includes(choseMes + 1)) result.push(estacao);
   });
 
-  console.log(...result);
+  console.log(
+    `Estação(ões) do mês de ${mesesNomes[choseMes]} no hemisfério ${hemisferios[choseHem]}:`,
+    ...result
+  );
 }
 
 script();
