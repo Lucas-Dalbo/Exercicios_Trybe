@@ -35,7 +35,7 @@ function exec() {
     const unidadeBase = unidades[base];
     const unidadeDest = unidades[dest];
     const resultado = convert(valor, unidadeBase, unidadeDest);
-    console.log(`${valor}${unidadeBase} é igual a ${resultado}${unidadeDest}.`);
+    console.log(`${valor}${unidadeBase}³ é igual a ${resultado}${unidadeDest}³.`);
 }
 exec();
 exports.default = exec;
