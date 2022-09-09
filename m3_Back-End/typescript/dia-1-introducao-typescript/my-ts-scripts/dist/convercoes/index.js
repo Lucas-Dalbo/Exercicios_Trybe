@@ -1,5 +1,5 @@
 "use strict";
-const scripts = ['length'];
+const scripts = ['length', 'mass', 'capacity', 'area', 'volume'];
 function executarScript(script) {
     return require(`./${script}`);
 }

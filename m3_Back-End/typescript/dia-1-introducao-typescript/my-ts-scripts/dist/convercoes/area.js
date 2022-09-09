@@ -2,13 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const readlineSync = require('readline-sync');
 const tabela = {
-    km: 1000,
-    hm: 100,
-    dam: 10,
+    km: 1000000,
+    hm: 10000,
+    dam: 100,
     m: 1,
-    dm: 0.1,
-    cm: 0.01,
-    mm: 0.001,
+    dm: 0.01,
+    cm: 0.0001,
+    mm: 0.000001,
 };
 const unidades = Object.keys(tabela);
 function convert(valor, base, converter) {
@@ -35,8 +35,7 @@ function exec() {
     const unidadeBase = unidades[base];
     const unidadeDest = unidades[dest];
     const resultado = convert(valor, unidadeBase, unidadeDest);
-    console.log(`${valor}${unidadeBase} é igual a ${resultado}${unidadeDest}.`);
+    console.log(`${valor}${unidadeBase}² é igual a ${resultado}${unidadeDest}².`);
 }
 exec();
 exports.default = exec;
-//https://stackoverflow.com/questions/50417254/dynamically-access-enum-in-typescript-by-key

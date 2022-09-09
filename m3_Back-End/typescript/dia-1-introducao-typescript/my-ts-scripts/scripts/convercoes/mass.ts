@@ -1,13 +1,13 @@
 const readlineSync = require('readline-sync');
 
 const tabela = {
-  km: 1000,
-  hm: 100,
-  dam: 10,
-  m: 1,
-  dm: 0.1,
-  cm: 0.01,
-  mm: 0.001,
+  kg: 1000,
+  hg: 100,
+  dag: 10,
+  g: 1,
+  dg: 0.1,
+  cg: 0.01,
+  mg: 0.001,
 }
 
 const unidades = Object.keys(tabela);
@@ -45,5 +45,3 @@ function exec(): void {
 exec();
 
 export default exec;
-
-//https://stackoverflow.com/questions/50417254/dynamically-access-enum-in-typescript-by-key

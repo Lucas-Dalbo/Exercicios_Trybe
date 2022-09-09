@@ -1,4 +1,4 @@
-const scripts = ['length'];
+const scripts = ['length', 'mass', 'capacity', 'area', 'volume'];
 
 function executarScript(script: string) :void {
   return require(`./${script}`);
