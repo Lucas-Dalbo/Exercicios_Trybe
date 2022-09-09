@@ -15,7 +15,7 @@ const unidades = Object.keys(tabela);
 function convert(valor: number, base: string, converter: string): number {
   const medAtual = tabela[base as keyof typeof tabela];
   const medAlvo = tabela[converter as keyof typeof tabela];
-  
+
   if(medAtual > medAlvo) {
     const chaveConvercao = medAlvo / medAtual;
     return valor / chaveConvercao;
@@ -27,8 +27,13 @@ function convert(valor: number, base: string, converter: string): number {
 
 function exec(): void {
   const valor = readlineSync.questionFloat('Qual valor deseja converter? ');
+
   const base = readlineSync.keyInSelect(unidades, 'Escolha a unidade de medida atual: ');
+  if(base < 0) return console.log('Aplicação encerrada');
+
+
   const dest = readlineSync.keyInSelect(unidades, 'Escolha a unidade de medida para que deseja converter: ');
+  if(dest < 0) return console.log('Aplicação encerrada');
 
   const unidadeBase = unidades[base];
   const unidadeDest = unidades[dest];

@@ -26,7 +26,11 @@ function convert(valor, base, converter) {
 function exec() {
     const valor = readlineSync.questionFloat('Qual valor deseja converter? ');
     const base = readlineSync.keyInSelect(unidades, 'Escolha a unidade de medida atual: ');
+    if (base < 0)
+        return console.log('Aplicação encerrada');
     const dest = readlineSync.keyInSelect(unidades, 'Escolha a unidade de medida para que deseja converter: ');
+    if (dest < 0)
+        return console.log('Aplicação encerrada');
     const unidadeBase = unidades[base];
     const unidadeDest = unidades[dest];
     const resultado = convert(valor, unidadeBase, unidadeDest);

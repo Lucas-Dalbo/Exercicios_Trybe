@@ -8,8 +8,11 @@ function selectScript() :void {
   const readline = require('readline-sync');
 
   const index = readline.keyInSelect(scripts, 'Selecione o programa que deseja executar: ');
-  const programa = scripts[index];
+  
+  if(index < 0) return console.log('Aplicação encerrada');
 
+  const programa = scripts[index];
+  
   console.log(`Executando ${programa}...`);
 
   return executarScript(programa);
