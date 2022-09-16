@@ -58,7 +58,7 @@ class Data {
     return false;
   }
 
-  public compare(data: Data) {
+  public compare(data: Data): number | void {
     const difDia = this._dia - data.dia;
     const difMes = this._mes - data.mes;
     const difAno = this._ano - data.ano;
@@ -72,6 +72,21 @@ class Data {
     if (difAno < 1) return -1;
     if (difAno === 0 && difMes < 0) return -1;
     if (difAno === 0 && difMes === 0 && difDia < 0) return -1;
+  }
+
+  public format(formato: string): string {
+    const ano = this._ano.toString();
+    const mes = this._mes.toString();
+    const dia = this._dia.toString();
+
+    const data = formato
+      .replace('aaaa', ano)
+      .replace('aa', ano.slice(-2))
+      .replace('mm', mes.length === 1 ? `0${mes}` :  mes)
+      .replace('M', this.getMonthName())
+      .replace('dd', dia.length === 1 ? `0${dia}` :  dia);
+
+    return data;
   }
 }
 
@@ -88,3 +103,6 @@ console.log(novaData.compare(new Data(1, 10, 1999)));
 console.log(novaData.compare(new Data(10, 11, 2000)));
 console.log(novaData.compare(new Data(10, 12, 2000)));
 console.log(novaData.compare(new Data(10, 12, 2022)));
+
+console.log(novaData.format('dd/mm/aaaa'));
+console.log(novaData.format('dd/M/aa'));
