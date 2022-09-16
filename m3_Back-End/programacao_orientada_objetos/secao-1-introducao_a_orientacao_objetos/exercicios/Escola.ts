@@ -27,8 +27,26 @@ class Estudante {
     this._trabalho01 = trabalho01;
     this._trabalho02 = trabalho02;
   }
+
+  public somaNotas(): number {
+    const provas = [this._prova01, this._prova02, this._prova03, this._prova04]
+      .reduce((acc, crr) => crr === null ? acc as number + 0 : acc as number + crr  , 0);
+    
+    const trabalhos = [this._trabalho01, this._trabalho02]
+      .reduce((acc, crr) => crr === null ? acc as number + 0 : acc as number + crr  , 0);
+
+    return (provas as number) + (trabalhos as number);
+  }
+
+  public media(): string {
+    const nota = this.somaNotas();
+    return (nota / 6).toFixed(1);
+  }
 }
 
-const pedrin = new Estudante('Matemática', 'Pedro');
+const pedrin = new Estudante('Matemática', 'Pedro', 10, 7, 5, 7, 5, 4);
 
 console.log(pedrin);
+
+console.log(pedrin.somaNotas());
+console.log(pedrin.media());
