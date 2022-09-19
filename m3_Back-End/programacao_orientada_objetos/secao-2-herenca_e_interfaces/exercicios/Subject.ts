@@ -22,10 +22,12 @@ class Subject {
   }
 }
 
-const subject = new Subject('História');
+export default Subject;
 
-console.log(subject.name);
+// const subject = new Subject('História');
 
-subject.name = 'Matemática';
+// console.log(subject.name);
 
-console.log(subject.name);
+// subject.name = 'Matemática';
+
+// console.log(subject.name);
