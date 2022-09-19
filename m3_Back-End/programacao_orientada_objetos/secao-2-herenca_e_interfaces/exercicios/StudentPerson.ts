@@ -66,7 +66,8 @@ class Estudante extends Person {
 
   public sumAverageGrade(): string {
     const soma = this.sumGrades();
-    const quant = this._examsGrades.length + this._worksGrade.length;
+    let quant = this._examsGrades.length + this._worksGrade.length;
+    if (quant === 0) quant = 1;
 
     return (soma / quant).toFixed(1);
   }
