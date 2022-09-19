@@ -1,6 +1,6 @@
 class Person {
   protected _name: string;
-  protected _birthDate: number;
+  protected _birthDate: Date;
 
   constructor(
     name: string,
@@ -10,7 +10,7 @@ class Person {
     this.validateName(name);
 
     this._name = name;
-    this._birthDate = birth.getDate();
+    this._birthDate = birth;
   }
 
   get name() {
@@ -28,7 +28,7 @@ class Person {
 
   setBirthDate(value: string): void {
     const birth = this.validateBirth(value);
-    this._birthDate = birth.getDate();
+    this._birthDate = birth;
   }
 
   private validateBirth(value: string): Date {
@@ -59,8 +59,10 @@ class Person {
   };
 }
 
-const p1 = new Person('Anne', '10/21/1997');
-const p2 = new Person('Pedro', '12/12/1973');
+export default Person;
 
-console.log(p1);
-console.log(p2);
+// const p1 = new Person('Anne', '10/21/1997');
+// const p2 = new Person('Pedro', '12/12/1973');
+
+// console.log(p1);
+// console.log(p2);
