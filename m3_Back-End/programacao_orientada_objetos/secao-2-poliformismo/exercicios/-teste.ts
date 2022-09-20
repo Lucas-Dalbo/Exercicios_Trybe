@@ -1,9 +1,9 @@
-import EvaluationResult from "./EvaluationResult";
-import Exam from "./Exam";
-import Student from "./StudentPerson";
-import Subject from "./Subject";
-import Teacher from "./Teacher";
-import Work from "./Work";
+import EvaluationResult from "./school/EvaluationResult";
+import Exam from "./school/Exam";
+import Student from "./school/StudentPerson";
+import Subject from "./school/Subject";
+import Teacher from "./school/Teacher";
+import Work from "./school/Work";
 
 const mat = new Subject('Matemática');
 const geo = new Subject('Geografia');
