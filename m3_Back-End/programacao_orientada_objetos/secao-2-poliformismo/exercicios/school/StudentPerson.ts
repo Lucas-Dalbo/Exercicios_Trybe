@@ -22,7 +22,7 @@ class Student extends Person implements Enrollable {
   }
 
   get enrollment() { return this._enrollment }
-  get evaluationResults() { return this._evaluationResults }
+  get evaluationResults() { return [...this._evaluationResults] }
 
   public setEnrollment(value: string): void {
     if (value.length < 16) throw new Error('INVALID_ENROLLMENT_LENGTH');
