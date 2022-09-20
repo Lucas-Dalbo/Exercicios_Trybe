@@ -43,7 +43,3 @@ class Employee extends Person implements Enrollable {
 }
 
 export default Employee;
-
-const employee = new Employee('Samara', '09/15/1990', 2500);
-
-console.log(employee);
