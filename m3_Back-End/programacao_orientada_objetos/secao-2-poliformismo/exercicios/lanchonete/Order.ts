@@ -8,16 +8,23 @@ export enum PayMethod {
 }
 
 class Order {
+  static id: number = 0.1;
+  private _id: string;
+  private _createdAt: Date;
   private _client: Person;
   private _items: OrderItem[];
   private _paymentMethod: PayMethod;
   private _discountPerCent: number;
 
-  constructor(cliente: Person, consumo: OrderItem[], pagamento: PayMethod, desconto: number = 0) { 
+  constructor(cliente: Person, consumo: OrderItem[], pagamento: PayMethod, desconto: number = 0) {
+    this._id = (Order.id * Date.now() * (Math.random() * 10)).toFixed(0);
+    this._createdAt = new Date(Date.now());
     this._client = cliente;
     this._items = this.orderValidate(consumo);
     this._paymentMethod = pagamento;
     this._discountPerCent = this.discontValidate(desconto);
+
+    Order.id += 0.1;
   }
 
   private orderValidate(value: OrderItem[]) : OrderItem[] {
@@ -30,6 +37,8 @@ class Order {
     return value;
   }
 
+  get id() { return this._id};
+  get createdAt() { return this._createdAt }
   get client() { return this._client }
   get items() { return [...this._items] }
   get paymentMethod() { return this._paymentMethod }

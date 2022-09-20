@@ -1,5 +1,6 @@
 import Order, { PayMethod } from "./lanchonete/Order";
 import OrderItem from "./lanchonete/OrderItem";
+import OrderRepository from "./lanchonete/OrderRepository";
 import EvaluationResult from "./school/EvaluationResult";
 import Exam from "./school/Exam";
 import Student from "./school/StudentPerson";
@@ -45,5 +46,12 @@ const refri = new OrderItem('Refrigerante', 5);
 const pedido01 = new Order(student1, [batata], PayMethod.DINHEIRO, 10);
 const pedido02 = new Order(mTeacher, [batata, refri], PayMethod.VALE, 5);
 
-console.log(pedido01);
-console.log(pedido02);
+// console.log(pedido01);
+// console.log(pedido02);
+
+const orderList = new OrderRepository();
+orderList.addOrder(pedido01);
+orderList.addOrder(pedido02);
+
+console.log(orderList.listBySortedValue('menor'));
+console.log(orderList.listBySortedValue('maior'));
