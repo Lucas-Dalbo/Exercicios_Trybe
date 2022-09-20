@@ -1,3 +1,5 @@
+import Order, { PayMethod } from "./lanchonete/Order";
+import OrderItem from "./lanchonete/OrderItem";
 import EvaluationResult from "./school/EvaluationResult";
 import Exam from "./school/Exam";
 import Student from "./school/StudentPerson";
@@ -11,8 +13,8 @@ const geo = new Subject('Geografia');
 const mTeacher = new Teacher('Tony', '03/08/1980', mat, 3000);
 const gTeacher = new Teacher('Cintia', '12/05/1989', geo, 3200);
 
-console.log(mTeacher);
-console.log(gTeacher);
+// console.log(mTeacher);
+// console.log(gTeacher);
 
 const mExam = new Exam(25, mTeacher);
 const mWork = new Work(50, mTeacher);
@@ -34,5 +36,14 @@ const result22 = new EvaluationResult(gWork, 20);
 student2.setEvaluationResult(result21);
 student2.setEvaluationResult(result22);
 
-console.log(student1);
-console.log(student2);
+// console.log(student1);
+// console.log(student2);
+
+const batata = new OrderItem('Batata Frita', 10);
+const refri = new OrderItem('Refrigerante', 5);
+
+const pedido01 = new Order(student1, [batata], PayMethod.DINHEIRO, 10);
+const pedido02 = new Order(mTeacher, [batata, refri], PayMethod.VALE, 5);
+
+console.log(pedido01);
+console.log(pedido02);
