@@ -1,5 +1,11 @@
 // ./interfaces.ts
-export interface IVehicle {
+
+export interface ICar {
   drive(): void;
+}
+
+export interface IAirPlane {
   fly(): void;
 }
+
+export interface IFutureCar extends ICar, IAirPlane {}

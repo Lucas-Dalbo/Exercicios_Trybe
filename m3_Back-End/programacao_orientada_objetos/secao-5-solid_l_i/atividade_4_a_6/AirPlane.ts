@@ -1,11 +1,7 @@
-import { IVehicle } from "./interfaces";
+import { IAirPlane } from "./interfaces";
 
-class AirPlane implements IVehicle {
+class AirPlane implements IAirPlane {
   fly(): void {
     console.log('Flying an airplane');
-  }
-
-  drive(): void {
-    
   }
 }
