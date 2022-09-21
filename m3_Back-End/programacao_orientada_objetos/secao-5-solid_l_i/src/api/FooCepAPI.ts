@@ -1,5 +1,7 @@
+import ICepAPI from "../interfaces/InterfaceCepAPI";
+
 // ./FooCepAPI.ts
-class FooCepAPI {
+class FooCepAPI implements ICepAPI {
   async getAddressByCEP(cep: string, number: number): Promise<string> {
     return `O endereço para o "CEP:${cep}, n°:${number}" é "endereço foo"`;
   }
