@@ -1,8 +1,12 @@
 // ./index.ts
 import CepService from './api/CepService';
+import FooCepAPI from './api/FooCepAPI';
+import MockCepAPI from './api/MockCepAPI';
 
 async function main() {
-  const cepSvc = new CepService();
+  const cepSvc = new CepService(new FooCepAPI() || new MockCepAPI());
+  // qualquer uma das classes satisfaz CepService, se nada for passado,
+  // o padrão é FooCepAPI
 
   console.log(
     'get address by cep', 
