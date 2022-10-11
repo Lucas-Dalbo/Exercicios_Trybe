@@ -1,0 +1,3 @@
+use('atividade11-2');
+
+db.heroi.find({ 'aspects.hairColor': { $in: ['Black', 'No Hair'] } });
