@@ -1,0 +1,9 @@
+use('cinema');
+
+db.movies.find({
+  $and: [
+    { category: { $elemMatch: { $in: ['adventure', 'family'] } } },
+    { ratings: { $size: 4 } },
+    { imdbRating: { $gte: 7 } },
+  ]
+});
