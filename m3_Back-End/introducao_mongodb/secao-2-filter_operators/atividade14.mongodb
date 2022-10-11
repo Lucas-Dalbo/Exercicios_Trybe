@@ -1,0 +1,8 @@
+use('atividade11-2');
+
+db.heroi.find({
+  $and: [
+    { 'aspects.height': { $in: [180, 200] }  },
+    { publisher: 'Marvel Comics' },
+  ],
+});

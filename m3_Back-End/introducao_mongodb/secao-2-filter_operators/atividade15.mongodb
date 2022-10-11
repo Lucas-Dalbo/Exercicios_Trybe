@@ -1,0 +1,9 @@
+use('atividade11-2');
+
+db.heroi.find({
+  $and: [
+    { 'aspects.weight': { $gte: 80, $lte: 100 }  },
+    { race: { $in: ['Human', 'Mutant'] } },
+    { publisher: { $ne: 'DC Comics' } },
+  ],
+});

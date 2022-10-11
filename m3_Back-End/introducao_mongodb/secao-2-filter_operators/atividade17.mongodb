@@ -1,0 +1,3 @@
+use('atividade11-2');
+
+db.heroi.countDocuments({ 'aspects.hairColor': { $exists: false } });

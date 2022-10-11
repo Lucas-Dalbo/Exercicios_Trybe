@@ -1,0 +1,8 @@
+use('atividade11-2');
+
+db.heroi.find({
+  $nor: [
+    { race: 'Human' },
+    { 'aspects.height': { $gt: 180 } }
+  ]
+});

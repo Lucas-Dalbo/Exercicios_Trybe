@@ -1,0 +1,3 @@
+use('atividade11-2');
+
+db.heroi.countDocuments({ 'aspects.height': { $gte: 200 } });
