@@ -1,0 +1,3 @@
+use('atividade11-2');
+
+db.heroi.find({ 'aspects.eyeColor': { $eq: 'green' } });
