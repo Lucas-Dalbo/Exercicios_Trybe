@@ -1,0 +1,6 @@
+use('class');
+
+db.movies.updateMany(
+  {},
+  { $mul: { sequels: 0 } },
+);
