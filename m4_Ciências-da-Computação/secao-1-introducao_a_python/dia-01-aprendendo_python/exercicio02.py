@@ -1,4 +1,4 @@
-def media_aritimetica(numb_list: list):
+def media_aritimetica(numb_list: 'list[int]'):
     return sum(numb_list)/len(numb_list)
 
 
