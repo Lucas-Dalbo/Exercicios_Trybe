@@ -1,4 +1,5 @@
 def media_aritimetica(numb_list: 'list[int]'):
+    '''Recebe uma lista de números inteiros e retorna a média aritmética da lista'''
     return sum(numb_list)/len(numb_list)
 
 
