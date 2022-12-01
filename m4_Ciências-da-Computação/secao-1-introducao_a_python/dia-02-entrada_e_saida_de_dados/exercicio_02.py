@@ -21,11 +21,10 @@ def guess_word(word: str, scrambled: str):
             break
         elif attempts_left > 1:
             print("Você errou, tente novamente")
+        else:
+            print(f"Que pena! A palavra era '{word}'")
         
         attempts_left -= 1
-
-          
-    print(f"Que pena! A palavra era '{word}'")
 
 
 if __name__ == "__main__":
