@@ -10,6 +10,7 @@ numb_to_letter = {
 }
 
 def convert_letters (string: str):
+    '''Recebe uma string e retorna uma nova string com números no lugar das letras'''
     new_string = string.upper()
     for key, value in numb_to_letter.items():
         for l in value:
