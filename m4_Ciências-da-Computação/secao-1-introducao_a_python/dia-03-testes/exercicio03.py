@@ -47,7 +47,7 @@ def email_validation (email: str):
             return "Email Inválido: Extensão inválida"
     
     except ValueError:
-        return "Email Inválido: Formato Inválido."
+        return "Email Inválido: Formato Inválido"
 
     return "Email Válido!"
 
