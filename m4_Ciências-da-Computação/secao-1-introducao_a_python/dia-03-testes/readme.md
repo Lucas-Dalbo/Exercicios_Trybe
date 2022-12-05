@@ -56,5 +56,5 @@ Faça uma função que valide um e-mail, lançando uma exceção quando o valor 
   - O tamanho máximo da extensão é de 3 caracteres.
 
 
-# Exercicio 4
+### Exercicio 4
 Baseado no exercício anterior, escreva uma função que, dado uma lista de emails, deve retornar somente os emails válidos. Caso uma exceção ocorra, apenas a escreva na tela.
