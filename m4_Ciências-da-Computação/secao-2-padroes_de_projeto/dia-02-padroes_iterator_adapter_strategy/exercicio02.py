@@ -44,7 +44,8 @@ class Baralho(Iterable):
     def __iter__(self):
         return BaralhoIterator(self._cartas)
 
-baralho = Baralho()
 
-for carta in baralho:
-    print(carta)
+if __name__ == "__main__":
+    baralho = Baralho()
+    for carta in baralho:
+        print(carta)
