@@ -11,7 +11,7 @@ class Estatistica():
             central = int(tamanho / 2)
             return (lista[central] + lista[central - 1]) / 2
         else:
-            central = int((tamanho + 1 / 2) - 1) 
+            central = int((tamanho + 1) / 2) -1 
             return lista[central]
 
     
