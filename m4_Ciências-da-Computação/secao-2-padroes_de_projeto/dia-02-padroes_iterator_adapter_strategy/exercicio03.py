@@ -23,6 +23,7 @@ class BaralhoInverso(Baralho):
         return ReverseBaralhoIterator(self._cartas)
 
 
-baraReverso = BaralhoInverso()
-for carta in baraReverso:
-    print(carta)
+if __name__ == "__main__":
+    baraReverso = BaralhoInverso()
+    for carta in baraReverso:
+        print(carta)
