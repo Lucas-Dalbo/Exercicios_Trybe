@@ -11,7 +11,7 @@ class FiguraGeometrica(ABC):
 
 
 class Quadrado(FiguraGeometrica):
-    def __init__(self, lado):
+    def __init__(self, lado: int or float):
         self.lado = lado
 
     def area(self):
@@ -22,7 +22,7 @@ class Quadrado(FiguraGeometrica):
 
 
 class Retangulo(FiguraGeometrica):
-    def __init__(self, base, altura):
+    def __init__(self, base: int or float, altura: int or float):
         self.base = base
         self.altura = altura
 
@@ -34,7 +34,7 @@ class Retangulo(FiguraGeometrica):
 
 
 class Circulo(FiguraGeometrica):
-    def __init__(self, raio):
+    def __init__(self, raio: int or float):
         self.raio = raio
 
     def area(self):
