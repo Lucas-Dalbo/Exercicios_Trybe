@@ -32,7 +32,7 @@ ___
 Cria uma classe abstrata "FiguraGeometrica" com os métodos:
 
   - area.
-  - perimetor.
+  - perimetro.
 
 E em seguida as classes "Quadrado", "Retangulo" e "Circulo", que herdam de "FiguraGeometrica" e utilizam os métodos herdados.
 
