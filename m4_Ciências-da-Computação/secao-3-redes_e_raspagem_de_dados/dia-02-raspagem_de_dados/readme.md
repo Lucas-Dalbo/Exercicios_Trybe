@@ -9,6 +9,7 @@ Faça uma requisição ao recurso usuários da API do Github (https://api.github
 
 ___
 ### Exercício 3
+Às vezes, você precisa fazer com que o seu raspador da Web pareça estar fazendo solicitações HTTP como o navegador, para que o servidor retorne os mesmos dados que você vê no seu navegador.
 Faça uma requisição a https://scrapethissite.com/pages/advanced/?gotcha=headers e verifique se foi bem sucedida.
 
 ___
