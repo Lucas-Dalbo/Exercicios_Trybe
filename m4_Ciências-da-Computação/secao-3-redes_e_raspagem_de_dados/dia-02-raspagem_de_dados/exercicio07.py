@@ -11,4 +11,3 @@ with MongoClient() as client:
     ]
     for category in db.books.aggregate(pipelines):
         print(category["_id"], category["count"], sep=": ")
-        

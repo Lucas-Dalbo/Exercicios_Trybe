@@ -18,7 +18,6 @@ cover = BASE_URL + selector.css(".item > img::attr(src)").re_first(r"media\S+")
 
 quant = selector.css("p.availability::text").re_first(r"\d+")
 
-
 print(
   title,
   price,
