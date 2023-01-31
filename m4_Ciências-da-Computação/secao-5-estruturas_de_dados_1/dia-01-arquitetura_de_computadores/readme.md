@@ -19,5 +19,9 @@ Agora vamos tanto explorar o hardware que estamos utilizando quanto aprender alg
   4. A velocidade em Megahertz - MHz;
   5. A quantidade de cache (L1, L2, L3).
   6. Informações sobre a memória RAM (no Linux você pode usar comando free, e no OSX você pode usar o comando top -l 1 | head -n 10 | grep PhysMem):
-  7. A quantidade total de memória RAM disponível em sua máquina em megabytes - MB (faça a conversão também 😉).
+  7. A quantidade total de memória RAM disponível em sua máquina em megabytes - MB.
   8. A quantidade total de memória RAM que está sendo utilizada em megabytes - MB.
+
+---
+## Exercício 04
+Faça um script que, a cada intervalo de segundo, mostre no console a memória utilizada do sistema operacional vs a memória total (ambos em megabytes - MB).
