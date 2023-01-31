@@ -2,7 +2,7 @@ from os import mkdir, listdir
 from os.path import join
 from shutil import rmtree
 
-DISK_PATH = "./disk"
+DISK_PATH = "./pc/disk"
 
 
 class SecondaryMemory:
