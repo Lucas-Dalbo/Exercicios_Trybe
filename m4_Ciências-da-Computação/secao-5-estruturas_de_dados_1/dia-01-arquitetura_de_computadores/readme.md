@@ -25,3 +25,7 @@ Agora vamos tanto explorar o hardware que estamos utilizando quanto aprender alg
 ---
 ## Exercício 04
 Faça um script que, a cada intervalo de segundo, mostre no console a memória utilizada do sistema operacional vs a memória total (ambos em megabytes - MB).
+
+---
+## Exercício 05
+Faça um script que exibe o seu respectivo process id utilizando o módulo os do Python e então fique em execução por um determinado tempo. Agora utilizando os comandos de monitoramento visto no conteúdo, exiba os processos em execução e então identifique o seu processo.
