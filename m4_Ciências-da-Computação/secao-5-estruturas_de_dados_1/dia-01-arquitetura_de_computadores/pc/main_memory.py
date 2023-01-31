@@ -11,7 +11,7 @@ class MainMemory:
     def get(self, index):
         try:
             value = self.loaded_memory[index]
-            return value
+            return int(value)
         except IndexError:
             return 0
 
