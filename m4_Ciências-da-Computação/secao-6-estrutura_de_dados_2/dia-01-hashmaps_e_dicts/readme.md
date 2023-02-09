@@ -11,3 +11,5 @@ words = ["cat", "bt", "hat", "tree"], chars = "atach"
 """Explicação: As palavras que podem ser formadas com os caracteres da string
                são "cat" (tamanho 3) e "hat" (tamanho 3)."""
 ```
+
+Em seguida, faça a análise de complexidade da sua solução.
