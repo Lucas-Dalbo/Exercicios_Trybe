@@ -10,4 +10,10 @@ Blefe é um jogo de duas pessoas onde cada uma tenta adivinhar os número que a 
 
 Implemente uma função que receba um dicionário com os nomes e números chutados e retorne o nome de quem ganhou.
 
-Faça a analise de coplexidade.
+Faça a analise de complexidade.
+
+---
+## Exercicio 02
+Dada uma string, ache o tamanho da maior substring que não tenha caracteres repetidos. Complexidade de tempo limite aceitável: O(n²).
+
+Faça a analise de complexidade.
